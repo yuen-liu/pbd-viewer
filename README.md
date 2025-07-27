@@ -33,13 +33,23 @@ npm install
 
 ### 2. Fetch PDB Metadata (Optional)
 
-To get a full dataset of ~5000 PDB entries:
+To get a full dataset of ~5000 PDB entries, you can use either Node.js or Python:
 
+**Python (Recommended - More Reliable):**
 ```bash
 # Fetch full dataset (takes ~10-15 minutes)
-npm run fetch-pdb
+npm run fetch-pdb-py
 
 # Or fetch smaller dataset for testing (100 entries)
+npm run fetch-pdb-py-small
+```
+
+**Node.js (Alternative):**
+```bash
+# Fetch full dataset
+npm run fetch-pdb
+
+# Or fetch smaller dataset for testing
 npm run fetch-pdb-small
 ```
 

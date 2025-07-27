@@ -1,1 +1,1922 @@
-[]
+[
+  {
+    "pdb_id": "100D",
+    "protein_name": "CRYSTAL STRUCTURE OF THE HIGHLY DISTORTED CHIMERIC DECAMER R(C)D(CGGCGCCG)R(G)-SPERMINE COMPLEX-SPERMINE BINDING TO PHOSPHATE ONLY AND MINOR GROOVE TERTIARY BASE-PAIRING",
+    "organism": "Unknown",
+    "resolution": 1.9,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1995-03-31T00:00:00+0000",
+    "structure_title": "CRYSTAL STRUCTURE OF THE HIGHLY DISTORTED CHIMERIC DECAMER R(C)D(CGGCGCCG)R(G)-SPERMINE COMPLEX-SPERMINE BINDING TO PHOSPHATE ONLY AND MINOR GROOVE TERTIARY BASE-PAIRING",
+    "molecular_weight": 6.36,
+    "keywords": [
+      "DNA-RNA HYBRID"
+    ],
+    "classification": "DNA-RNA HYBRID",
+    "authors": [
+      "Ban, C.",
+      "Ramakrishnan, B.",
+      "Sundaralingam, M."
+    ]
+  },
+  {
+    "pdb_id": "101D",
+    "protein_name": "REFINEMENT OF NETROPSIN BOUND TO DNA: BIAS AND FEEDBACK IN ELECTRON DENSITY MAP INTERPRETATION",
+    "organism": "Unknown",
+    "resolution": 2.25,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1995-02-27T00:00:00+0000",
+    "structure_title": "REFINEMENT OF NETROPSIN BOUND TO DNA: BIAS AND FEEDBACK IN ELECTRON DENSITY MAP INTERPRETATION",
+    "molecular_weight": 7.94,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Goodsell, D.S.",
+      "Kopka, M.L.",
+      "Dickerson, R.E."
+    ]
+  },
+  {
+    "pdb_id": "101M",
+    "protein_name": "SPERM WHALE MYOGLOBIN F46V N-BUTYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 2.07,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN F46V N-BUTYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.11,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "102D",
+    "protein_name": "SEQUENCE-DEPENDENT DRUG BINDING TO THE MINOR GROOVE OF DNA: THE CRYSTAL STRUCTURE OF THE DNA DODECAMER D(CGCAAATTTGCG)2 COMPLEXED WITH PROPAMIDINE",
+    "organism": "Unknown",
+    "resolution": 2.2,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1995-02-07T00:00:00+0000",
+    "structure_title": "SEQUENCE-DEPENDENT DRUG BINDING TO THE MINOR GROOVE OF DNA: THE CRYSTAL STRUCTURE OF THE DNA DODECAMER D(CGCAAATTTGCG)2 COMPLEXED WITH PROPAMIDINE",
+    "molecular_weight": 7.64,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Nunn, C.M.",
+      "Neidle, S."
+    ]
+  },
+  {
+    "pdb_id": "102L",
+    "protein_name": "HOW AMINO-ACID INSERTIONS ARE ALLOWED IN AN ALPHA-HELIX OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.74,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "HOW AMINO-ACID INSERTIONS ARE ALLOWED IN AN ALPHA-HELIX OF T4 LYSOZYME",
+    "molecular_weight": 18.93,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Heinz, D.W.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "102M",
+    "protein_name": "SPERM WHALE MYOGLOBIN H64A AQUOMET AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 1.84,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN H64A AQUOMET AT PH 9.0",
+    "molecular_weight": 18.01,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "103L",
+    "protein_name": "HOW AMINO-ACID INSERTIONS ARE ALLOWED IN AN ALPHA-HELIX OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.9,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "HOW AMINO-ACID INSERTIONS ARE ALLOWED IN AN ALPHA-HELIX OF T4 LYSOZYME",
+    "molecular_weight": 19.09,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Heinz, D.W.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "103M",
+    "protein_name": "SPERM WHALE MYOGLOBIN H64A N-BUTYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 2.07,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN H64A N-BUTYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.09,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "104L",
+    "protein_name": "HOW AMINO-ACID INSERTIONS ARE ALLOWED IN AN ALPHA-HELIX OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "HOW AMINO-ACID INSERTIONS ARE ALLOWED IN AN ALPHA-HELIX OF T4 LYSOZYME",
+    "molecular_weight": 37.54,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Heinz, D.W.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "104M",
+    "protein_name": "SPERM WHALE MYOGLOBIN N-BUTYL ISOCYANIDE AT PH 7.0",
+    "organism": "Unknown",
+    "resolution": 1.71,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN N-BUTYL ISOCYANIDE AT PH 7.0",
+    "molecular_weight": 18.03,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "105M",
+    "protein_name": "SPERM WHALE MYOGLOBIN N-BUTYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 2.02,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN N-BUTYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.03,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "106M",
+    "protein_name": "SPERM WHALE MYOGLOBIN V68F ETHYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 1.99,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN V68F ETHYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.18,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "107L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.83,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "107M",
+    "protein_name": "SPERM WHALE MYOGLOBIN V68F N-BUTYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 2.09,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN V68F N-BUTYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.21,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "108L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.88,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "108M",
+    "protein_name": "SPERM WHALE MYOGLOBIN V68F N-BUTYL ISOCYANIDE AT PH 7.0",
+    "organism": "Unknown",
+    "resolution": 2.67,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-05-20T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN V68F N-BUTYL ISOCYANIDE AT PH 7.0",
+    "molecular_weight": 18.21,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "109D",
+    "protein_name": "VARIABILITY IN DNA MINOR GROOVE WIDTH RECOGNISED BY LIGAND BINDING: THE CRYSTAL STRUCTURE OF A BIS-BENZIMIDAZOLE COMPOUND BOUND TO THE DNA DUPLEX D(CGCGAATTCGCG)2",
+    "organism": "Unknown",
+    "resolution": 2.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1995-05-08T00:00:00+0000",
+    "structure_title": "VARIABILITY IN DNA MINOR GROOVE WIDTH RECOGNISED BY LIGAND BINDING: THE CRYSTAL STRUCTURE OF A BIS-BENZIMIDAZOLE COMPOUND BOUND TO THE DNA DUPLEX D(CGCGAATTCGCG)2",
+    "molecular_weight": 7.75,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Czarny, A.",
+      "Boykin, D.W.",
+      "Wood, A.A.",
+      "Nunn, C.M.",
+      "Neidle, S.",
+      "Zhao, M.",
+      "Wilson, W.D."
+    ]
+  },
+  {
+    "pdb_id": "109L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.85,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.9,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "109M",
+    "protein_name": "SPERM WHALE MYOGLOBIN D122N ETHYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 1.83,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN D122N ETHYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.13,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "10GS",
+    "protein_name": "HUMAN GLUTATHIONE S-TRANSFERASE P1-1, COMPLEX WITH TER117",
+    "organism": "Unknown",
+    "resolution": 2.2,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-09-16T00:00:00+0000",
+    "structure_title": "HUMAN GLUTATHIONE S-TRANSFERASE P1-1, COMPLEX WITH TER117",
+    "molecular_weight": 47.83,
+    "keywords": [
+      "TRANSFERASE/TRANSFERASE INHIBITOR"
+    ],
+    "classification": "TRANSFERASE/TRANSFERASE INHIBITOR",
+    "authors": [
+      "Oakley, A.",
+      "Parker, M."
+    ]
+  },
+  {
+    "pdb_id": "10MH",
+    "protein_name": "TERNARY STRUCTURE OF HHAI METHYLTRANSFERASE WITH ADOHCY AND HEMIMETHYLATED DNA CONTAINING 5,6-DIHYDRO-5-AZACYTOSINE AT THE TARGET",
+    "organism": "Unknown",
+    "resolution": 2.55,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1999-02-09T00:00:00+0000",
+    "structure_title": "TERNARY STRUCTURE OF HHAI METHYLTRANSFERASE WITH ADOHCY AND HEMIMETHYLATED DNA CONTAINING 5,6-DIHYDRO-5-AZACYTOSINE AT THE TARGET",
+    "molecular_weight": 44.77,
+    "keywords": [
+      "TRANSFERASE/DNA"
+    ],
+    "classification": "TRANSFERASE/DNA",
+    "authors": [
+      "Sheikhnejad, G.",
+      "Brank, A.",
+      "Christman, J.K.",
+      "Goddard, A.",
+      "Alvarez, E.",
+      "Ford Junior, H.",
+      "Marquez, V.E.",
+      "Marasco, C.J.",
+      "Sufrin, J.R.",
+      "O'Gara, M.",
+      "Cheng, X."
+    ]
+  },
+  {
+    "pdb_id": "110D",
+    "protein_name": "ANTHRACYCLINE-DNA INTERACTIONS AT UNFAVOURABLE BASE BASE-PAIR TRIPLET-BINDING SITES: STRUCTURES OF D(CGGCCG)/DAUNOMYCIN AND D(TGGCCA)/ADRIAMYCIN COMPL",
+    "organism": "Unknown",
+    "resolution": 1.9,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-04-15T00:00:00+0000",
+    "structure_title": "ANTHRACYCLINE-DNA INTERACTIONS AT UNFAVOURABLE BASE BASE-PAIR TRIPLET-BINDING SITES: STRUCTURES OF D(CGGCCG)/DAUNOMYCIN AND D(TGGCCA)/ADRIAMYCIN COMPL",
+    "molecular_weight": 2.34,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Leonard, G.A.",
+      "Hambley, T.W.",
+      "McAuley-Hecht, K.",
+      "Brown, T.",
+      "Hunter, W.N."
+    ]
+  },
+  {
+    "pdb_id": "110L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.88,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "110M",
+    "protein_name": "SPERM WHALE MYOGLOBIN D122N METHYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 1.77,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN D122N METHYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.12,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "111D",
+    "protein_name": "CRYSTAL STRUCTURE AND STABILITY OF A DNA DUPLEX CONTAINING A(ANTI).G(SYN) BASE-PAIRS",
+    "organism": "Unknown",
+    "resolution": 2.25,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-07-15T00:00:00+0000",
+    "structure_title": "CRYSTAL STRUCTURE AND STABILITY OF A DNA DUPLEX CONTAINING A(ANTI).G(SYN) BASE-PAIRS",
+    "molecular_weight": 7.37,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Brown, T.",
+      "Leonard, G.A.",
+      "Booth, E.D.",
+      "Chambers, J."
+    ]
+  },
+  {
+    "pdb_id": "111L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.73,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "111M",
+    "protein_name": "SPERM WHALE MYOGLOBIN D122N N-BUTYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 1.88,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN D122N N-BUTYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.16,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "112D",
+    "protein_name": "MOLECULAR STRUCTURE OF THE G.A BASE PAIR IN DNA AND ITS IMPLICATIONS FOR THE MECHANISM OF TRANSVERSION MUTATIONS",
+    "organism": "Unknown",
+    "resolution": 2.5,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-07-15T00:00:00+0000",
+    "structure_title": "MOLECULAR STRUCTURE OF THE G.A BASE PAIR IN DNA AND ITS IMPLICATIONS FOR THE MECHANISM OF TRANSVERSION MUTATIONS",
+    "molecular_weight": 7.37,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Brown, T.",
+      "Hunter, W.N.",
+      "Kneale, G.",
+      "Kennard, O."
+    ]
+  },
+  {
+    "pdb_id": "112L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "112M",
+    "protein_name": "SPERM WHALE MYOGLOBIN D122N N-PROPYL ISOCYANIDE AT PH 9.0",
+    "organism": "Unknown",
+    "resolution": 2.34,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-04-08T00:00:00+0000",
+    "structure_title": "SPERM WHALE MYOGLOBIN D122N N-PROPYL ISOCYANIDE AT PH 9.0",
+    "molecular_weight": 18.15,
+    "keywords": [
+      "OXYGEN TRANSPORT"
+    ],
+    "classification": "OXYGEN TRANSPORT",
+    "authors": [
+      "Smith, R.D.",
+      "Olson, J.S.",
+      "Phillips Jr., G.N."
+    ]
+  },
+  {
+    "pdb_id": "113D",
+    "protein_name": "THE STRUCTURE OF GUANOSINE-THYMIDINE MISMATCHES IN B-DNA AT 2.5 ANGSTROMS RESOLUTION",
+    "organism": "Unknown",
+    "resolution": 2.5,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-07-15T00:00:00+0000",
+    "structure_title": "THE STRUCTURE OF GUANOSINE-THYMIDINE MISMATCHES IN B-DNA AT 2.5 ANGSTROMS RESOLUTION",
+    "molecular_weight": 7.36,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Hunter, W.N.",
+      "Brown, T.",
+      "Kneale, G.",
+      "Anand, N.N.",
+      "Rabinovich, D.",
+      "Kennard, O."
+    ]
+  },
+  {
+    "pdb_id": "113L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.93,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "114D",
+    "protein_name": "INOSINE-ADENINE BASE PAIRS IN A B-DNA DUPLEX",
+    "organism": "Unknown",
+    "resolution": 2.5,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-07-15T00:00:00+0000",
+    "structure_title": "INOSINE-ADENINE BASE PAIRS IN A B-DNA DUPLEX",
+    "molecular_weight": 7.34,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Corfield, P.W.R.",
+      "Hunter, W.N.",
+      "Brown, T.",
+      "Robinson, P.",
+      "Kennard, O."
+    ]
+  },
+  {
+    "pdb_id": "114L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "115D",
+    "protein_name": "ORDERED WATER STRUCTURE IN AN A-DNA OCTAMER AT 1.7 ANGSTROMS RESOLUTION",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-07-15T00:00:00+0000",
+    "structure_title": "ORDERED WATER STRUCTURE IN AN A-DNA OCTAMER AT 1.7 ANGSTROMS RESOLUTION",
+    "molecular_weight": 5.11,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Kennard, O.",
+      "Cruse, W.B.T.",
+      "Nachman, J.",
+      "Prange, T.",
+      "Shakked, Z.",
+      "Rabinovich, D."
+    ]
+  },
+  {
+    "pdb_id": "115L",
+    "protein_name": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF ALPHA-HELIX PROPENSITY AT TWO SITES IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "116D",
+    "protein_name": "CRYSTAL AND MOLECULAR STRUCTURE OF THE A-DNA DODECAMER D(CCGTACGTACGG): CHOICE OF FRAGMENT HELICAL AXIS",
+    "organism": "Unknown",
+    "resolution": 2.5,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-04-15T00:00:00+0000",
+    "structure_title": "CRYSTAL AND MOLECULAR STRUCTURE OF THE A-DNA DODECAMER D(CCGTACGTACGG): CHOICE OF FRAGMENT HELICAL AXIS",
+    "molecular_weight": 3.66,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Bingman, C.A.",
+      "Zon, G.",
+      "Sundaralingam, M."
+    ]
+  },
+  {
+    "pdb_id": "117D",
+    "protein_name": "CRYSTAL AND MOLECULAR STRUCTURE OF THE ALTERNATING DODECAMER D(GCGTACGTACGC) IN THE A-DNA FORM: COMPARISON WITH THE ISOMORPHOUS NON-ALTERNATING DODECAMER D(CCGTACGTACGG)",
+    "organism": "Unknown",
+    "resolution": 2.55,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-04-15T00:00:00+0000",
+    "structure_title": "CRYSTAL AND MOLECULAR STRUCTURE OF THE ALTERNATING DODECAMER D(GCGTACGTACGC) IN THE A-DNA FORM: COMPARISON WITH THE ISOMORPHOUS NON-ALTERNATING DODECAMER D(CCGTACGTACGG)",
+    "molecular_weight": 3.66,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Bingman, C.A.",
+      "Jain, S.",
+      "Zon, G.",
+      "Sundaralingam, M."
+    ]
+  },
+  {
+    "pdb_id": "117E",
+    "protein_name": "THE R78K AND D117E ACTIVE SITE VARIANTS OF SACCHAROMYCES CEREVISIAE SOLUBLE INORGANIC PYROPHOSPHATASE: STRUCTURAL STUDIES AND MECHANISTIC IMPLICATIONS",
+    "organism": "Unknown",
+    "resolution": 2.15,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-12-23T00:00:00+0000",
+    "structure_title": "THE R78K AND D117E ACTIVE SITE VARIANTS OF SACCHAROMYCES CEREVISIAE SOLUBLE INORGANIC PYROPHOSPHATASE: STRUCTURAL STUDIES AND MECHANISTIC IMPLICATIONS",
+    "molecular_weight": 65.2,
+    "keywords": [
+      "HYDROLASE"
+    ],
+    "classification": "HYDROLASE",
+    "authors": [
+      "Tuominen, V.",
+      "Heikinheimo, P.",
+      "Kajander, T.",
+      "Torkkel, T.",
+      "Hyytia, T.",
+      "Kapyla, J.",
+      "Lahti, R.",
+      "Cooperman, B.S.",
+      "Goldman, A."
+    ]
+  },
+  {
+    "pdb_id": "118D",
+    "protein_name": "CRYSTAL AND MOLECULAR STRUCTURE OF D(GTGCGCAC): INVESTIGATION OF THE EFFECTS OF BASE SEQUENCE ON THE CONFORMATION OF OCTAMER DUPLEXES",
+    "organism": "Unknown",
+    "resolution": 1.64,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-02-11T00:00:00+0000",
+    "structure_title": "CRYSTAL AND MOLECULAR STRUCTURE OF D(GTGCGCAC): INVESTIGATION OF THE EFFECTS OF BASE SEQUENCE ON THE CONFORMATION OF OCTAMER DUPLEXES",
+    "molecular_weight": 2.43,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Bingman, C.A.",
+      "Li, X.",
+      "Zon, G.",
+      "Sundaralingam, M."
+    ]
+  },
+  {
+    "pdb_id": "118L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "119D",
+    "protein_name": "CRYSTAL AND MOLECULAR STRUCTURE OF D(CGTAGATCTACG) AT 2.25 ANGSTROMS RESOLUTION",
+    "organism": "Unknown",
+    "resolution": 2.25,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-15T00:00:00+0000",
+    "structure_title": "CRYSTAL AND MOLECULAR STRUCTURE OF D(CGTAGATCTACG) AT 2.25 ANGSTROMS RESOLUTION",
+    "molecular_weight": 7.35,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Leonard, G.A.",
+      "Hunter, W.N."
+    ]
+  },
+  {
+    "pdb_id": "119L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.65,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "11AS",
+    "protein_name": "ASPARAGINE SYNTHETASE MUTANT C51A, C315A COMPLEXED WITH L-ASPARAGINE",
+    "organism": "Unknown",
+    "resolution": 2.5,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-12-30T00:00:00+0000",
+    "structure_title": "ASPARAGINE SYNTHETASE MUTANT C51A, C315A COMPLEXED WITH L-ASPARAGINE",
+    "molecular_weight": 73.53,
+    "keywords": [
+      "LIGASE"
+    ],
+    "classification": "LIGASE",
+    "authors": [
+      "Nakatsu, T.",
+      "Kato, H.",
+      "Oda, J."
+    ]
+  },
+  {
+    "pdb_id": "11BA",
+    "protein_name": "BINDING OF A SUBSTRATE ANALOGUE TO A DOMAIN SWAPPING PROTEIN IN THE COMPLEX OF BOVINE SEMINAL RIBONUCLEASE WITH URIDYLYL-2',5'-ADENOSINE",
+    "organism": "Unknown",
+    "resolution": 2.06,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1999-03-26T00:00:00+0000",
+    "structure_title": "BINDING OF A SUBSTRATE ANALOGUE TO A DOMAIN SWAPPING PROTEIN IN THE COMPLEX OF BOVINE SEMINAL RIBONUCLEASE WITH URIDYLYL-2',5'-ADENOSINE",
+    "molecular_weight": 28.7,
+    "keywords": [
+      "HYDROLASE"
+    ],
+    "classification": "HYDROLASE",
+    "authors": [
+      "Vitagliano, L.",
+      "Adinolfi, S.",
+      "Riccio, A.",
+      "Sica, F.",
+      "Zagari, A.",
+      "Mazzarella, L."
+    ]
+  },
+  {
+    "pdb_id": "11BG",
+    "protein_name": "A POTENTIAL ALLOSTERIC SUBSITE GENERATED BY DOMAIN SWAPPING IN BOVINE SEMINAL RIBONUCLEASE",
+    "organism": "Unknown",
+    "resolution": 1.9,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1999-11-05T00:00:00+0000",
+    "structure_title": "A POTENTIAL ALLOSTERIC SUBSITE GENERATED BY DOMAIN SWAPPING IN BOVINE SEMINAL RIBONUCLEASE",
+    "molecular_weight": 30.39,
+    "keywords": [
+      "HYDROLASE"
+    ],
+    "classification": "HYDROLASE",
+    "authors": [
+      "Vitagliano, L.",
+      "Adinolfi, S.",
+      "Sica, F.",
+      "Merlino, A.",
+      "Zagari, A.",
+      "Mazzarella, L."
+    ]
+  },
+  {
+    "pdb_id": "11GS",
+    "protein_name": "Glutathione s-transferase complexed with ethacrynic acid-glutathione conjugate (form ii)",
+    "organism": "Unknown",
+    "resolution": 2.3,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1999-01-13T00:00:00+0000",
+    "structure_title": "Glutathione s-transferase complexed with ethacrynic acid-glutathione conjugate (form ii)",
+    "molecular_weight": 48.37,
+    "keywords": [
+      "TRANSFERASE"
+    ],
+    "classification": "TRANSFERASE",
+    "authors": [
+      "Oakley, A.J.",
+      "Lo Bello, M.",
+      "Mazzetti, A.P.",
+      "Federici, G.",
+      "Parker, M.W."
+    ]
+  },
+  {
+    "pdb_id": "120L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "121D",
+    "protein_name": "MOLECULAR STRUCTURE OF THE A-TRACT DNA DODECAMER D(CGCAAATTTGCG) COMPLEXED WITH THE MINOR GROOVE BINDING DRUG NETROPSIN",
+    "organism": "Unknown",
+    "resolution": 2.2,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "MOLECULAR STRUCTURE OF THE A-TRACT DNA DODECAMER D(CGCAAATTTGCG) COMPLEXED WITH THE MINOR GROOVE BINDING DRUG NETROPSIN",
+    "molecular_weight": 7.76,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Tabernero, L.",
+      "Verdaguer, N.",
+      "Coll, M.",
+      "Fita, I.",
+      "Van Der Marel, G.A.",
+      "Van Boom, J.H.",
+      "Rich, A.",
+      "Aymami, J."
+    ]
+  },
+  {
+    "pdb_id": "121P",
+    "protein_name": "STRUKTUR UND GUANOSINTRIPHOSPHAT-HYDROLYSEMECHANISMUS DES C-TERMINAL VERKUERZTEN MENSCHLICHEN KREBSPROTEINS P21-H-RAS",
+    "organism": "Unknown",
+    "resolution": 1.54,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "STRUKTUR UND GUANOSINTRIPHOSPHAT-HYDROLYSEMECHANISMUS DES C-TERMINAL VERKUERZTEN MENSCHLICHEN KREBSPROTEINS P21-H-RAS",
+    "molecular_weight": 19.42,
+    "keywords": [
+      "ONCOGENE PROTEIN"
+    ],
+    "classification": "ONCOGENE PROTEIN",
+    "authors": [
+      "Krengel, U.",
+      "Scheffzek, K.",
+      "Scherer, A.",
+      "Kabsch, W.",
+      "Wittinghofer, A.",
+      "Pai, E.F."
+    ]
+  },
+  {
+    "pdb_id": "122D",
+    "protein_name": "DNA HELIX STRUCTURE AND REFINEMENT ALGORITHM: COMPARISON OF MODELS FOR D(CCAGGCM==5==CTGG) DERIVED FROM NUCLSQ, TNT, AND X-PLOR",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-15T00:00:00+0000",
+    "structure_title": "DNA HELIX STRUCTURE AND REFINEMENT ALGORITHM: COMPARISON OF MODELS FOR D(CCAGGCM==5==CTGG) DERIVED FROM NUCLSQ, TNT, AND X-PLOR",
+    "molecular_weight": 6.12,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Hahn, M.",
+      "Heinemann, U."
+    ]
+  },
+  {
+    "pdb_id": "122L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "123D",
+    "protein_name": "DNA HELIX STRUCTURE AND REFINEMENT ALGORITHM: COMPARISON OF MODELS FOR D(CCAGGCM==5==CTGG) DERIVED FROM NUCLSQ, TNT, AND X-PLOR",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-15T00:00:00+0000",
+    "structure_title": "DNA HELIX STRUCTURE AND REFINEMENT ALGORITHM: COMPARISON OF MODELS FOR D(CCAGGCM==5==CTGG) DERIVED FROM NUCLSQ, TNT, AND X-PLOR",
+    "molecular_weight": 6.12,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Hahn, M.",
+      "Heinemann, U."
+    ]
+  },
+  {
+    "pdb_id": "123L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "125L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.85,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.87,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "126D",
+    "protein_name": "CRYSTAL STRUCTURE OF CATGGCCATG AND ITS IMPLICATIONS FOR A-TRACT BENDING MODELS",
+    "organism": "Unknown",
+    "resolution": 2.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-15T00:00:00+0000",
+    "structure_title": "CRYSTAL STRUCTURE OF CATGGCCATG AND ITS IMPLICATIONS FOR A-TRACT BENDING MODELS",
+    "molecular_weight": 6.09,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Goodsell, D.S.",
+      "Kopka, M.L.",
+      "Cascio, D.",
+      "Dickerson, R.E."
+    ]
+  },
+  {
+    "pdb_id": "126L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.86,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "127D",
+    "protein_name": "DNA (5'-D(*CP*GP*CP*GP*AP*AP*TP*TP*CP*GP*CP*G)-3') COMPLEXED WITH HOECHST 33258",
+    "organism": "Unknown",
+    "resolution": 2.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "DNA (5'-D(*CP*GP*CP*GP*AP*AP*TP*TP*CP*GP*CP*G)-3') COMPLEXED WITH HOECHST 33258",
+    "molecular_weight": 7.75,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Sriram, M.",
+      "Van Der Marel, G.A.",
+      "Roelen, H.L.P.F.",
+      "Van Boom, J.H.",
+      "Wang, A.H.-J."
+    ]
+  },
+  {
+    "pdb_id": "127L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.85,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.89,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "128D",
+    "protein_name": "MOLECULAR STRUCTURE OF D(CGC[E6G]AATTCGCG) COMPLEXED WITH HOECHST 33258",
+    "organism": "Unknown",
+    "resolution": 2.5,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "MOLECULAR STRUCTURE OF D(CGC[E6G]AATTCGCG) COMPLEXED WITH HOECHST 33258",
+    "molecular_weight": 7.81,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Sriram, M.",
+      "Van Der Marel, G.A.",
+      "Roelen, H.L.P.F.",
+      "Van Boom, J.H.",
+      "Wang, A.H.-J."
+    ]
+  },
+  {
+    "pdb_id": "128L",
+    "protein_name": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "THE ENERGETIC COST AND THE STRUCTURAL CONSEQUENCES OF BURYING A HYDROXYL GROUP WITHIN THE CORE OF A PROTEIN DETERMINED FROM ALA TO SER AND VAL TO THR SUBSTITUTIONS IN T4 LYSOZYME",
+    "molecular_weight": 18.82,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "129D",
+    "protein_name": "DNA (5'-D(*CP*GP*CP*GP*AP*AP*TP*TP*CP*GP*CP*G)-3') COMPLEXED WITH HOECHST 33342",
+    "organism": "Unknown",
+    "resolution": 2.25,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "DNA (5'-D(*CP*GP*CP*GP*AP*AP*TP*TP*CP*GP*CP*G)-3') COMPLEXED WITH HOECHST 33342",
+    "molecular_weight": 7.78,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Sriram, M.",
+      "Van Der Marel, G.A.",
+      "Roelen, H.L.P.F.",
+      "Van Boom, J.H.",
+      "Wang, A.H.-J."
+    ]
+  },
+  {
+    "pdb_id": "129L",
+    "protein_name": "STRUCTURES OF RANDOMLY GENERATED MUTANTS OF T4 LYSOZYME SHOW THAT PROTEIN STABILITY CAN BE ENHANCED BY RELAXATION OF STRAIN AND BY IMPROVED HYDROGEN BONDING VIA BOUND SOLVENT",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "STRUCTURES OF RANDOMLY GENERATED MUTANTS OF T4 LYSOZYME SHOW THAT PROTEIN STABILITY CAN BE ENHANCED BY RELAXATION OF STRAIN AND BY IMPROVED HYDROGEN BONDING VIA BOUND SOLVENT",
+    "molecular_weight": 18.89,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Pjura, P.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "12AS",
+    "protein_name": "ASPARAGINE SYNTHETASE MUTANT C51A, C315A COMPLEXED WITH L-ASPARAGINE AND AMP",
+    "organism": "Unknown",
+    "resolution": 2.2,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-12-30T00:00:00+0000",
+    "structure_title": "ASPARAGINE SYNTHETASE MUTANT C51A, C315A COMPLEXED WITH L-ASPARAGINE AND AMP",
+    "molecular_weight": 74.23,
+    "keywords": [
+      "LIGASE"
+    ],
+    "classification": "LIGASE",
+    "authors": [
+      "Nakatsu, T.",
+      "Kato, H.",
+      "Oda, J."
+    ]
+  },
+  {
+    "pdb_id": "12CA",
+    "protein_name": "ALTERING THE MOUTH OF A HYDROPHOBIC POCKET. STRUCTURE AND KINETICS OF HUMAN CARBONIC ANHYDRASE II MUTANTS AT RESIDUE VAL-121",
+    "organism": "Unknown",
+    "resolution": 2.4,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1992-10-15T00:00:00+0000",
+    "structure_title": "ALTERING THE MOUTH OF A HYDROPHOBIC POCKET. STRUCTURE AND KINETICS OF HUMAN CARBONIC ANHYDRASE II MUTANTS AT RESIDUE VAL-121",
+    "molecular_weight": 29.53,
+    "keywords": [
+      "LYASE(OXO-ACID)"
+    ],
+    "classification": "LYASE(OXO-ACID)",
+    "authors": [
+      "Nair, S.K.",
+      "Christianson, D.W."
+    ]
+  },
+  {
+    "pdb_id": "12E8",
+    "protein_name": "2E8 FAB FRAGMENT",
+    "organism": "Unknown",
+    "resolution": 1.9,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1998-08-05T00:00:00+0000",
+    "structure_title": "2E8 FAB FRAGMENT",
+    "molecular_weight": 94.84,
+    "keywords": [
+      "IMMUNOGLOBULIN"
+    ],
+    "classification": "IMMUNOGLOBULIN",
+    "authors": [
+      "Rupp, B.",
+      "Trakhanov, S."
+    ]
+  },
+  {
+    "pdb_id": "12GS",
+    "protein_name": "GLUTATHIONE S-TRANSFERASE COMPLEXED WITH S-NONYL-GLUTATHIONE",
+    "organism": "Unknown",
+    "resolution": 2.1,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1999-01-13T00:00:00+0000",
+    "structure_title": "GLUTATHIONE S-TRANSFERASE COMPLEXED WITH S-NONYL-GLUTATHIONE",
+    "molecular_weight": 48.01,
+    "keywords": [
+      "TRANSFERASE/TRANSFERASE INHIBITOR"
+    ],
+    "classification": "TRANSFERASE/TRANSFERASE INHIBITOR",
+    "authors": [
+      "Oakley, A.J.",
+      "Lo Bello, M.",
+      "Parker, M.W."
+    ]
+  },
+  {
+    "pdb_id": "130D",
+    "protein_name": "MOLECULAR STRUCTURE OF D(CGC[E6G]AATTCGCG) COMPLEXED WITH HOECHST 33342",
+    "organism": "Unknown",
+    "resolution": 2.5,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "MOLECULAR STRUCTURE OF D(CGC[E6G]AATTCGCG) COMPLEXED WITH HOECHST 33342",
+    "molecular_weight": 7.84,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Sriram, M.",
+      "Van Der Marel, G.A.",
+      "Roelen, H.L.P.F.",
+      "Van Boom, J.H.",
+      "Wang, A.H.-J."
+    ]
+  },
+  {
+    "pdb_id": "130L",
+    "protein_name": "STRUCTURES OF RANDOMLY GENERATED MUTANTS OF T4 LYSOZYME SHOW THAT PROTEIN STABILITY CAN BE ENHANCED BY RELAXATION OF STRAIN AND BY IMPROVED HYDROGEN BONDING VIA BOUND SOLVENT",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "STRUCTURES OF RANDOMLY GENERATED MUTANTS OF T4 LYSOZYME SHOW THAT PROTEIN STABILITY CAN BE ENHANCED BY RELAXATION OF STRAIN AND BY IMPROVED HYDROGEN BONDING VIA BOUND SOLVENT",
+    "molecular_weight": 18.84,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Pjura, P.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "131D",
+    "protein_name": "THE LOW-TEMPERATURE CRYSTAL STRUCTURE OF THE PURE-SPERMINE FORM OF Z-DNA REVEALS BINDING OF A SPERMINE MOLECULE IN THE MINOR GROOVE",
+    "organism": "Unknown",
+    "resolution": 1.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-15T00:00:00+0000",
+    "structure_title": "THE LOW-TEMPERATURE CRYSTAL STRUCTURE OF THE PURE-SPERMINE FORM OF Z-DNA REVEALS BINDING OF A SPERMINE MOLECULE IN THE MINOR GROOVE",
+    "molecular_weight": 4.07,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Bancroft, D.",
+      "Williams, L.D.",
+      "Rich, A.",
+      "Egli, M."
+    ]
+  },
+  {
+    "pdb_id": "131L",
+    "protein_name": "STRUCTURES OF RANDOMLY GENERATED MUTANTS OF T4 LYSOZYME SHOW THAT PROTEIN STABILITY CAN BE ENHANCED BY RELAXATION OF STRAIN AND BY IMPROVED HYDROGEN BONDING VIA BOUND SOLVENT",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "STRUCTURES OF RANDOMLY GENERATED MUTANTS OF T4 LYSOZYME SHOW THAT PROTEIN STABILITY CAN BE ENHANCED BY RELAXATION OF STRAIN AND BY IMPROVED HYDROGEN BONDING VIA BOUND SOLVENT",
+    "molecular_weight": 18.84,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Pjura, P.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "132L",
+    "protein_name": "STRUCTURAL CONSEQUENCES OF REDUCTIVE METHYLATION OF LYSINE RESIDUES IN HEN EGG WHITE LYSOZYME: AN X-RAY ANALYSIS AT 1.8 ANGSTROMS RESOLUTION",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL CONSEQUENCES OF REDUCTIVE METHYLATION OF LYSINE RESIDUES IN HEN EGG WHITE LYSOZYME: AN X-RAY ANALYSIS AT 1.8 ANGSTROMS RESOLUTION",
+    "molecular_weight": 14.49,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Rayment, I.",
+      "Rypniewski, W.R.",
+      "Holden, H.M."
+    ]
+  },
+  {
+    "pdb_id": "133D",
+    "protein_name": "THE CRYSTAL STRUCTURE OF N4-METHYLCYTOSINE.GUANOSIN BASE-PAIRS IN THE SYNTHETIC HEXANUCLEOTIDE D(CGCGM(4)CG)",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "THE CRYSTAL STRUCTURE OF N4-METHYLCYTOSINE.GUANOSIN BASE-PAIRS IN THE SYNTHETIC HEXANUCLEOTIDE D(CGCGM(4)CG)",
+    "molecular_weight": 3.65,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Cervi, A.R.",
+      "Guy, A.",
+      "Leonard, G.A.",
+      "Teoule, R.",
+      "Hunter, W.N."
+    ]
+  },
+  {
+    "pdb_id": "133L",
+    "protein_name": "ROLE OF ARG 115 IN THE CATALYTIC ACTION OF HUMAN LYSOZYME. X-RAY STRUCTURE OF HIS 115 AND GLU 115 MUTANTS",
+    "organism": "Unknown",
+    "resolution": 1.77,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "ROLE OF ARG 115 IN THE CATALYTIC ACTION OF HUMAN LYSOZYME. X-RAY STRUCTURE OF HIS 115 AND GLU 115 MUTANTS",
+    "molecular_weight": 14.7,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Harata, K.",
+      "Muraki, M.",
+      "Jigami, Y."
+    ]
+  },
+  {
+    "pdb_id": "134L",
+    "protein_name": "ROLE OF ARG 115 IN THE CATALYTIC ACTION OF HUMAN LYSOZYME. X-RAY STRUCTURE OF HIS 115 AND GLU 115 MUTANTS",
+    "organism": "Unknown",
+    "resolution": 1.77,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "ROLE OF ARG 115 IN THE CATALYTIC ACTION OF HUMAN LYSOZYME. X-RAY STRUCTURE OF HIS 115 AND GLU 115 MUTANTS",
+    "molecular_weight": 14.69,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Harata, K.",
+      "Muraki, M.",
+      "Jigami, Y."
+    ]
+  },
+  {
+    "pdb_id": "135L",
+    "protein_name": "X-RAY STRUCTURE OF MONOCLINIC TURKEY EGG LYSOZYME AT 1.3 ANGSTROMS RESOLUTION",
+    "organism": "Unknown",
+    "resolution": 1.3,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1993-10-31T00:00:00+0000",
+    "structure_title": "X-RAY STRUCTURE OF MONOCLINIC TURKEY EGG LYSOZYME AT 1.3 ANGSTROMS RESOLUTION",
+    "molecular_weight": 14.23,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Harata, K."
+    ]
+  },
+  {
+    "pdb_id": "137D",
+    "protein_name": "A-DNA DECAMER D(GCGGGCCCGC)-ORTHORHOMBIC CRYSTAL FORM",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "A-DNA DECAMER D(GCGGGCCCGC)-ORTHORHOMBIC CRYSTAL FORM",
+    "molecular_weight": 6.09,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Ramakrishnan, B.",
+      "Sundaralingam, M."
+    ]
+  },
+  {
+    "pdb_id": "137L",
+    "protein_name": "STRUCTURAL BASIS OF AMINO ACID ALPHA HELIX PROPENSITY",
+    "organism": "Unknown",
+    "resolution": 1.85,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-07-31T00:00:00+0000",
+    "structure_title": "STRUCTURAL BASIS OF AMINO ACID ALPHA HELIX PROPENSITY",
+    "molecular_weight": 37.38,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Blaber, M.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "138D",
+    "protein_name": "A-DNA DECAMER D(GCGGGCCCGC)-HEXAGONAL CRYSTAL FORM",
+    "organism": "Unknown",
+    "resolution": 1.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "A-DNA DECAMER D(GCGGGCCCGC)-HEXAGONAL CRYSTAL FORM",
+    "molecular_weight": 3.05,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Ramakrishnan, B.",
+      "Sundaralingam, M."
+    ]
+  },
+  {
+    "pdb_id": "138L",
+    "protein_name": "RAPID CRYSTALLIZATION OF T4 LYSOZYME BY INTERMOLECULAR DISULFIDE CROSSLINKING",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "RAPID CRYSTALLIZATION OF T4 LYSOZYME BY INTERMOLECULAR DISULFIDE CROSSLINKING",
+    "molecular_weight": 18.81,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Heinz, D.W.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "139L",
+    "protein_name": "RAPID CRYSTALLIZATION OF T4 LYSOZYME BY INTERMOLECULAR DISULFIDE CROSSLINKING",
+    "organism": "Unknown",
+    "resolution": 1.7,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "RAPID CRYSTALLIZATION OF T4 LYSOZYME BY INTERMOLECULAR DISULFIDE CROSSLINKING",
+    "molecular_weight": 18.88,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Heinz, D.W.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "13GS",
+    "protein_name": "GLUTATHIONE S-TRANSFERASE COMPLEXED WITH SULFASALAZINE",
+    "organism": "Unknown",
+    "resolution": 1.9,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1999-01-13T00:00:00+0000",
+    "structure_title": "GLUTATHIONE S-TRANSFERASE COMPLEXED WITH SULFASALAZINE",
+    "molecular_weight": 48.75,
+    "keywords": [
+      "TRANSFERASE/TRANSFERASE INHIBITOR"
+    ],
+    "classification": "TRANSFERASE/TRANSFERASE INHIBITOR",
+    "authors": [
+      "Oakley, A.J.",
+      "Lo Bello, M.",
+      "Parker, M.W."
+    ]
+  },
+  {
+    "pdb_id": "13PK",
+    "protein_name": "TERNARY COMPLEX OF PHOSPHOGLYCERATE KINASE FROM TRYPANOSOMA BRUCEI",
+    "organism": "Unknown",
+    "resolution": 2.5,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1997-12-24T00:00:00+0000",
+    "structure_title": "TERNARY COMPLEX OF PHOSPHOGLYCERATE KINASE FROM TRYPANOSOMA BRUCEI",
+    "molecular_weight": 181.55,
+    "keywords": [
+      "KINASE"
+    ],
+    "classification": "KINASE",
+    "authors": [
+      "Bernstein, B.E.",
+      "Michels, P.A.M.",
+      "Hol, W.G.J."
+    ]
+  },
+  {
+    "pdb_id": "140L",
+    "protein_name": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.1,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "molecular_weight": 18.84,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Baldwin, E.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "141L",
+    "protein_name": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "molecular_weight": 18.89,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Baldwin, E.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "142L",
+    "protein_name": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "molecular_weight": 18.77,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Baldwin, E.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "143L",
+    "protein_name": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "molecular_weight": 18.83,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Baldwin, E.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "144D",
+    "protein_name": "MINOR GROOVE BINDING OF SN6999 TO AN ALKYLATED DNA: MOLECULAR STRUCTURE OF D(CGC[E6G]AATTCGCG)-SN6999 COMPLEX",
+    "organism": "Unknown",
+    "resolution": 2.25,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1995-05-30T00:00:00+0000",
+    "structure_title": "MINOR GROOVE BINDING OF SN6999 TO AN ALKYLATED DNA: MOLECULAR STRUCTURE OF D(CGC[E6G]AATTCGCG)-SN6999 COMPLEX",
+    "molecular_weight": 7.84,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Gao, Y.-G.",
+      "Sriram, M.",
+      "Denny, W.A.",
+      "Wang, A.H.-J."
+    ]
+  },
+  {
+    "pdb_id": "144L",
+    "protein_name": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.1,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "molecular_weight": 18.95,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Baldwin, E.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "145D",
+    "protein_name": "Structure and thermodynamics of nonalternating C/G base pairs in Z-DNA: the 1.3 angstroms crystal structure of the asymmetric hexanucleotide D(M(5)CGGGM(5) CG)/D(M(5)CGCCM(5)CG)",
+    "organism": "Unknown",
+    "resolution": 1.25,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-15T00:00:00+0000",
+    "structure_title": "Structure and thermodynamics of nonalternating C/G base pairs in Z-DNA: the 1.3 angstroms crystal structure of the asymmetric hexanucleotide D(M(5)CGGGM(5) CG)/D(M(5)CGCCM(5)CG)",
+    "molecular_weight": 7.11,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Schroth, G.P.",
+      "Kagawa, T.F.",
+      "Shing Ho, P."
+    ]
+  },
+  {
+    "pdb_id": "145L",
+    "protein_name": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "molecular_weight": 18.92,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Baldwin, E.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "146L",
+    "protein_name": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.85,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "molecular_weight": 18.99,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Baldwin, E.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "147L",
+    "protein_name": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.0,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-01-31T00:00:00+0000",
+    "structure_title": "ROLE OF BACKBONE FLEXIBILITY IN THE ACCOMMODATION OF VARIANTS THAT REPACK THE CORE OF T4 LYSOZYME",
+    "molecular_weight": 18.79,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Baldwin, E.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "148L",
+    "protein_name": "A COVALENT ENZYME-SUBSTRATE INTERMEDIATE WITH SACCHARIDE DISTORTION IN A MUTANT T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 1.9,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-04-30T00:00:00+0000",
+    "structure_title": "A COVALENT ENZYME-SUBSTRATE INTERMEDIATE WITH SACCHARIDE DISTORTION IN A MUTANT T4 LYSOZYME",
+    "molecular_weight": 19.69,
+    "keywords": [
+      "HYDROLASE/HYDROLASE SUBSTRATE"
+    ],
+    "classification": "HYDROLASE/HYDROLASE SUBSTRATE",
+    "authors": [
+      "Kuroki, R.",
+      "Weaver, L.H.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "149L",
+    "protein_name": "CONSERVATION OF SOLVENT-BINDING SITES IN 10 CRYSTAL FORMS OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.6,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-04-30T00:00:00+0000",
+    "structure_title": "CONSERVATION OF SOLVENT-BINDING SITES IN 10 CRYSTAL FORMS OF T4 LYSOZYME",
+    "molecular_weight": 18.66,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Wilson, K.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "14GS",
+    "protein_name": "GLUTATHIONE S-TRANSFERASE P1-1 APO FORM 1",
+    "organism": "Unknown",
+    "resolution": 2.8,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1999-01-13T00:00:00+0000",
+    "structure_title": "GLUTATHIONE S-TRANSFERASE P1-1 APO FORM 1",
+    "molecular_weight": 47.15,
+    "keywords": [
+      "TRANSFERASE"
+    ],
+    "classification": "TRANSFERASE",
+    "authors": [
+      "Oakley, A.J.",
+      "Lo Bello, M.",
+      "Ricci, G.",
+      "Federici, G.",
+      "Parker, M.W."
+    ]
+  },
+  {
+    "pdb_id": "150D",
+    "protein_name": "GUANINE.1,N6-ETHENOADENINE BASE-PAIRS IN THE CRYSTAL STRUCTURE OF D(CGCGAATT(EDA)GCG)",
+    "organism": "Unknown",
+    "resolution": 2.25,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-05-31T00:00:00+0000",
+    "structure_title": "GUANINE.1,N6-ETHENOADENINE BASE-PAIRS IN THE CRYSTAL STRUCTURE OF D(CGCGAATT(EDA)GCG)",
+    "molecular_weight": 7.45,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Leonard, G.A.",
+      "McAuley-Hecht, K.E.",
+      "Gibson, N.J.",
+      "Brown, T.",
+      "Watson, W.P.",
+      "Hunter, W.N."
+    ]
+  },
+  {
+    "pdb_id": "150L",
+    "protein_name": "CONSERVATION OF SOLVENT-BINDING SITES IN 10 CRYSTAL FORMS OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.2,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-04-30T00:00:00+0000",
+    "structure_title": "CONSERVATION OF SOLVENT-BINDING SITES IN 10 CRYSTAL FORMS OF T4 LYSOZYME",
+    "molecular_weight": 74.58,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Faber, H.R.",
+      "Matthews, B.W."
+    ]
+  },
+  {
+    "pdb_id": "151D",
+    "protein_name": "DIVERSITY OF WATER RING SIZE AT DNA INTERFACES: HYDRATION AND DYNAMICS OF DNA-ANTHRACYCLINE COMPLEXES",
+    "organism": "Unknown",
+    "resolution": 1.4,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-05-04T00:00:00+0000",
+    "structure_title": "DIVERSITY OF WATER RING SIZE AT DNA INTERFACES: HYDRATION AND DYNAMICS OF DNA-ANTHRACYCLINE COMPLEXES",
+    "molecular_weight": 2.35,
+    "keywords": [
+      "DNA"
+    ],
+    "classification": "DNA",
+    "authors": [
+      "Lipscomb, L.A.",
+      "Peek, M.E.",
+      "Zhou, F.X.",
+      "Bertrand, J.A.",
+      "VanDerveer, D.",
+      "Williams, L.D."
+    ]
+  },
+  {
+    "pdb_id": "151L",
+    "protein_name": "CONSERVATION OF SOLVENT-BINDING SITES IN 10 CRYSTAL FORMS OF T4 LYSOZYME",
+    "organism": "Unknown",
+    "resolution": 2.2,
+    "method": "X-RAY DIFFRACTION",
+    "release_date": "1994-04-30T00:00:00+0000",
+    "structure_title": "CONSERVATION OF SOLVENT-BINDING SITES IN 10 CRYSTAL FORMS OF T4 LYSOZYME",
+    "molecular_weight": 18.63,
+    "keywords": [
+      "HYDROLASE(O-GLYCOSYL)"
+    ],
+    "classification": "HYDROLASE(O-GLYCOSYL)",
+    "authors": [
+      "Zhang, X.-J.",
+      "Matthews, B.W."
+    ]
+  }
+]

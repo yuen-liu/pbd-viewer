@@ -79,10 +79,19 @@ async function fetchDetailedMetadata(pdbIds) {
     try {
       console.log(`Fetching detailed metadata for batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(pdbIds.length/batchSize)}...`);
       
-      const response = await fetch(`${PDB_DATA_API}/${idsParam}`);
+      const url = `${PDB_DATA_API}/${idsParam}`;
+      console.log(`Fetching from: ${url}`);
+      
+      const response = await fetch(url, {
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
       
       if (!response.ok) {
-        console.warn(`Failed to fetch metadata for batch: ${response.statusText}`);
+        const errorText = await response.text();
+        console.warn(`Failed to fetch metadata for batch: ${response.status} ${response.statusText}`);
+        console.warn(`Error details:`, errorText);
         continue;
       }
 

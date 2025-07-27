@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "fetch-pdb": "node scripts/fetch-pdb-metadata.js",
-    "fetch-pdb-small": "node scripts/fetch-pdb-metadata.js 100"
+    "fetch-pdb-small": "node scripts/fetch-pdb-metadata.js 100",
+    "fetch-pdb-py": "python3 scripts/fetch-pdb-metadata.py",
+    "fetch-pdb-py-small": "python3 scripts/fetch-pdb-metadata.py 100"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
