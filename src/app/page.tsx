@@ -52,7 +52,7 @@ async function loadPDBData() {
       const data = await response.json();
       return data;
     }
-  } catch (error) {
+  } catch {
     console.log('Using sample data - run metadata script to get full dataset');
   }
   

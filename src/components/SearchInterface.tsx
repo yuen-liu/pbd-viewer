@@ -150,7 +150,7 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({ pdbData }) => 
       {/* Search Stats */}
       <div className="text-sm text-gray-600 text-center">
         {searchQuery ? (
-          <p>Found {searchResults.length} results for "{searchQuery}"</p>
+          <p>Found {searchResults.length} results for &quot;{searchQuery}&quot;</p>
         ) : (
           <p>
             {showBookmarksOnly ? 
@@ -249,7 +249,7 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({ pdbData }) => 
       {/* No Results */}
       {searchResults.length === 0 && searchQuery && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">No results found for "{searchQuery}"</p>
+          <p className="text-gray-500 text-lg">No results found for &quot;{searchQuery}&quot;</p>
           <p className="text-gray-400 text-sm mt-2">
             Try searching with different keywords or check your spelling
           </p>
