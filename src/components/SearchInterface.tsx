@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Viewer } from './Viewer';
-import { Search, Eye, Bookmark, BookmarkCheck } from 'lucide-react';
+import { Search, Eye, Bookmark, BookmarkCheck, Image as ImageIcon, ExternalLink } from 'lucide-react';
 
 interface PDBEntry {
   pdb_id: string;
@@ -27,6 +27,49 @@ interface PDBEntry {
 interface SearchInterfaceProps {
   pdbData: PDBEntry[];
 }
+
+// PDB Thumbnail Component
+const PDBThumbnail: React.FC<{ pdbId: string; proteinName: string }> = ({ pdbId, proteinName }) => {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
+  
+  // RCSB PDB provides thumbnail images at this URL pattern
+  const thumbnailUrl = `https://cdn.rcsb.org/images/structures/${pdbId.toLowerCase()}_assembly-1.jpeg`;
+  
+  return (
+    <div className="relative w-full h-64 bg-gray-100 rounded-lg overflow-hidden mb-3">
+      {!imageError ? (
+        <img
+          src={thumbnailUrl}
+          alt={`${pdbId} - ${proteinName}`}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            imageLoading ? 'opacity-0' : 'opacity-100'
+          }`}
+          onLoad={() => setImageLoading(false)}
+          onError={() => {
+            setImageError(true);
+            setImageLoading(false);
+          }}
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
+          <ImageIcon className="h-8 w-8 text-gray-400" />
+        </div>
+      )}
+      
+      {imageLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+        </div>
+      )}
+      
+      {/* PDB ID overlay */}
+      <div className="absolute top-2 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+        {pdbId.toUpperCase()}
+      </div>
+    </div>
+  );
+};
 
 export const SearchInterface: React.FC<SearchInterfaceProps> = ({ pdbData }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -166,6 +209,9 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({ pdbData }) => 
         {searchResults.map((entry) => (
           <Card key={entry.pdb_id} className="hover:shadow-lg transition-shadow">
             <CardHeader className="pb-3">
+              {/* Thumbnail */}
+              <PDBThumbnail pdbId={entry.pdb_id} proteinName={entry.protein_name} />
+              
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <CardTitle className="text-lg font-bold text-blue-600">
@@ -232,15 +278,26 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({ pdbData }) => 
                 Released: {formatDate(entry.release_date)}
               </p>
 
-              {/* View Button */}
-              <Button 
-                onClick={() => openViewer(entry.pdb_id)}
-                className="w-full flex items-center gap-2"
-                size="sm"
-              >
-                <Eye className="h-4 w-4" />
-                View 3D Structure
-              </Button>
+              {/* Action Buttons */}
+              <div className="flex gap-2">
+                <Button 
+                  onClick={() => openViewer(entry.pdb_id)}
+                  className="flex-1 flex items-center gap-2"
+                  size="sm"
+                >
+                  <Eye className="h-4 w-4" />
+                  View 3D
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => window.open(`https://www.rcsb.org/structure/${entry.pdb_id}`, '_blank')}
+                  className="flex-1 flex items-center gap-2"
+                  size="sm"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  PDB Site
+                </Button>
+              </div>
             </CardContent>
           </Card>
         ))}

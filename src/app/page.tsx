@@ -1,5 +1,8 @@
 import { Suspense } from 'react';
 import SearchInterface from '@/components/SearchInterface';
+import { pdbService } from '@/lib/supabase';
+import fs from 'fs';
+import path from 'path';
 
 // Sample PDB data for development - replace with actual data loading
 const samplePDBData = [
@@ -46,17 +49,49 @@ const samplePDBData = [
 
 async function loadPDBData() {
   try {
-    // Try to load from the generated metadata file
-    const response = await fetch('/pdb-summary.json');
-    if (response.ok) {
-      const data = await response.json();
-      return data;
+    // Try to load from Supabase first
+    console.log('Loading PDB data from Supabase...');
+    const supabaseData = await pdbService.getPDBEntries(undefined, 1000); // Get up to 1000 entries
+    
+    if (supabaseData && supabaseData.length > 0) {
+      console.log(`✅ Loaded ${supabaseData.length} PDB entries from Supabase`);
+      return supabaseData;
     }
-  } catch {
-    console.log('Using sample data - run metadata script to get full dataset');
+    
+    console.log('No data in Supabase, trying local file...');
+    
+    // Fallback to local JSON file
+    const filePath = path.join(process.cwd(), 'public', 'pdb-summary.json');
+    if (fs.existsSync(filePath)) {
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const data = JSON.parse(fileContents);
+      if (data && data.length > 0) {
+        console.log(`📁 Loaded ${data.length} PDB entries from local file`);
+        return data;
+      }
+    }
+  } catch (error) {
+    console.log('Error loading from Supabase:', error);
+    console.log('Falling back to local data...');
+    
+    // Try local file as backup
+    try {
+      const filePath = path.join(process.cwd(), 'public', 'pdb-summary.json');
+      if (fs.existsSync(filePath)) {
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        const data = JSON.parse(fileContents);
+        if (data && data.length > 0) {
+          console.log(`📁 Loaded ${data.length} PDB entries from local file (fallback)`);
+          return data;
+        }
+      }
+    } catch (localError) {
+      console.log('Error loading local file:', localError);
+    }
   }
   
-  // Fallback to sample data
+  console.log('⚠️  Using sample data - run migration script to populate Supabase');
+  // Final fallback to sample data
   return samplePDBData;
 }
 

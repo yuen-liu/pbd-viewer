@@ -10,20 +10,25 @@
     "fetch-pdb": "node scripts/fetch-pdb-metadata.js",
     "fetch-pdb-small": "node scripts/fetch-pdb-metadata.js 100",
     "fetch-pdb-py": "python3 scripts/fetch-pdb-metadata.py",
-    "fetch-pdb-py-small": "python3 scripts/fetch-pdb-metadata.py 100"
+    "fetch-pdb-py-small": "python3 scripts/fetch-pdb-metadata.py 100",
+    "migrate-supabase": "tsx scripts/migrate-to-supabase.ts",
+    "setup-supabase": "echo 'Run the SQL schema in your Supabase dashboard first, then run npm run migrate-supabase'"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-slot": "^1.2.3",
+    "@supabase/supabase-js": "^2.52.1",
     "3dmol": "^2.5.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.1",
     "fuse.js": "^7.1.0",
     "lucide-react": "^0.525.0",
     "next": "15.4.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "tsx": "^4.20.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
