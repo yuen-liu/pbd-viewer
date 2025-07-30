@@ -193,7 +193,7 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
           const model = viewerInstance.getModel(0);
           if (model) {
             const atoms = model.selectedAtoms({ hetflag: false });
-            const chains = new Set();
+            const chains = new Set<string>();
             const chainCenters: { [key: string]: { x: number, y: number, z: number, count: number } } = {};
             
             // Collect chains and calculate centers
@@ -211,7 +211,7 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
             });
             
             // Add chain labels
-            Array.from(chains).forEach((chainId) => {
+            Array.from(chains).forEach((chainId: string) => {
               if (chainCenters[chainId]) {
                 const center = chainCenters[chainId];
                 const avgPos = {
