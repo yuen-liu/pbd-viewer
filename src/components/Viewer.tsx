@@ -76,9 +76,9 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
       newViewer.addModel(pdbData, 'pdb');
       
       // Set view and render
-      newViewer.zoomTo();
+      newViewer.zoomTo({}, 1.0);  // add margin
       newViewer.render();
-      
+            
       setViewer(newViewer);
       setLoading(false);
     } catch (err) {
@@ -94,6 +94,35 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
     try {
       viewerInstance.setStyle({}, {}); // Clear existing styles
       viewerInstance.removeAllLabels(); // Clear existing labels
+      
+      // Helper function to get available styles for the model
+      const getAvailableStyles = (model: any) => {
+        const styles = new Set<string>();
+        const atoms = model?.selectedAtoms({}) || [];
+        
+        // Check which styles are available
+        if (atoms.some((a: any) => a.ss === 'h' || a.ss === 's' || a.ss === '')) {
+          styles.add('cartoon');
+        }
+        if (atoms.some((a: any) => a.bonds?.length > 0)) {
+          styles.add('stick');
+        }
+        styles.add('sphere'); // Always available as a fallback
+        
+        return styles;
+      };
+      
+      // Get model and available styles
+      const model = viewerInstance.getModel(0);
+      const availableStyles = getAvailableStyles(model);
+      
+      // If requested style isn't available, find the best fallback
+      let effectiveStyle = style;
+      if (!availableStyles.has(style)) {
+        const stylePreference = ['cartoon', 'stick', 'sphere'];
+        effectiveStyle = stylePreference.find(s => availableStyles.has(s)) || 'sphere';
+        console.log(`Style '${style}' not available, falling back to '${effectiveStyle}'`);
+      }
       
       if (colorMode === 'chain') {
         // Color each chain differently
@@ -129,17 +158,8 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
             const chainColor = chainColors[index % chainColors.length];
             const styleConfig: any = {};
             
-            switch (style) {
-              case 'cartoon':
-                styleConfig.cartoon = { color: chainColor };
-                break;
-              case 'stick':
-                styleConfig.stick = { color: chainColor };
-                break;
-              case 'sphere':
-                styleConfig.sphere = { color: chainColor };
-                break;
-            }
+            // Apply the effective style
+            styleConfig[effectiveStyle] = { color: chainColor };
             
             // Apply style to this specific chain (protein atoms only)
             viewerInstance.setStyle({ chain: chainId, hetflag: false }, styleConfig);
@@ -169,21 +189,16 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
         }
       } else if (colorMode === 'default') {
         // Default color mode - apply to all protein atoms
-        const styleConfig: any = {};
+        const styleConfig: any = {
+          [effectiveStyle]: { colorscheme: 'default' }
+        };
         
-        switch (style) {
-          case 'cartoon':
-            styleConfig.cartoon = { 
-              color: 'spectrum',
-              colorscheme: 'rainbow'
-            };
-            break;
-          case 'stick':
-            styleConfig.stick = { colorscheme: 'default' };
-            break;
-          case 'sphere':
-            styleConfig.sphere = { colorscheme: 'default' };
-            break;
+        // Special case for cartoon style
+        if (effectiveStyle === 'cartoon') {
+          styleConfig.cartoon = { 
+            color: 'spectrum',
+            colorscheme: 'rainbow'
+          };
         }
         
         viewerInstance.setStyle({ hetflag: false }, styleConfig);
