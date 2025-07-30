@@ -1,8 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 
 // Type definitions for 3Dmol
 declare global {
@@ -23,6 +21,8 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
   const [error, setError] = useState<string | null>(null);
   const [currentStyle, setCurrentStyle] = useState<'cartoon' | 'stick' | 'sphere'>('cartoon');
   const [showLigands, setShowLigands] = useState(true);
+  const [colorMode, setColorMode] = useState<'chain' | 'default'>('chain');
+  const [showLabels, setShowLabels] = useState(true);
 
   useEffect(() => {
     // Load 3Dmol.js script if not already loaded
@@ -42,6 +42,15 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
       }
     };
   }, [pdbId]);
+
+  // Apply styles whenever settings change
+  useEffect(() => {
+    if (viewer && !loading && !error) {
+      setTimeout(() => {
+        applyStyle(viewer, currentStyle, showLigands);
+      }, 100);
+    }
+  }, [viewer, currentStyle, colorMode, showLigands, showLabels, loading, error]);
 
   const initializeViewer = async () => {
     if (!viewerRef.current || !window.$3Dmol) return;
@@ -66,9 +75,6 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
       // Add model to viewer
       newViewer.addModel(pdbData, 'pdb');
       
-      // Set initial style
-      applyStyle(newViewer, currentStyle, showLigands);
-      
       // Set view and render
       newViewer.zoomTo();
       newViewer.render();
@@ -82,48 +88,234 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
     }
   };
 
-  const applyStyle = (viewerInstance: any, style: string, includeLigands: boolean = showLigands) => {
-    viewerInstance.setStyle({}, {}); // Clear existing styles
+  const applyStyle = (viewerInstance: any, style: string, showLigs: boolean) => {
+    console.log('Applying style:', style, 'colorMode:', colorMode, 'showLigs:', showLigs, 'showLabels:', showLabels);
     
-    // Apply main protein style
-    switch (style) {
-      case 'cartoon':
-        viewerInstance.setStyle({ hetflag: false }, { cartoon: { color: 'spectrum' } });
-        break;
-      case 'stick':
-        viewerInstance.setStyle({ hetflag: false }, { stick: { colorscheme: 'Jmol' } });
-        break;
-      case 'sphere':
-        viewerInstance.setStyle({ hetflag: false }, { sphere: { colorscheme: 'Jmol' } });
-        break;
-    }
-    
-    // Apply ligand style if enabled
-    if (includeLigands) {
-      viewerInstance.setStyle({ hetflag: true }, { 
-        stick: { 
-          colorscheme: 'greenCarbon',
-          radius: 0.3
+    try {
+      viewerInstance.setStyle({}, {}); // Clear existing styles
+      viewerInstance.removeAllLabels(); // Clear existing labels
+      
+      if (colorMode === 'chain') {
+        // Color each chain differently
+        const chainColors = [
+          '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', 
+          '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F',
+          '#BB8FCE', '#85C1E9', '#F8C471', '#82E0AA'
+        ];
+        
+        // Get all chains in the model
+        const model = viewerInstance.getModel(0);
+        if (model) {
+          const atoms = model.selectedAtoms({});
+          const chains = new Set();
+          const chainCenters: { [key: string]: { x: number, y: number, z: number, count: number } } = {};
+          
+          // Collect chains and calculate centers
+          atoms.forEach((atom: any) => {
+            if (atom.chain && !atom.hetflag) {
+              chains.add(atom.chain);
+              if (!chainCenters[atom.chain]) {
+                chainCenters[atom.chain] = { x: 0, y: 0, z: 0, count: 0 };
+              }
+              chainCenters[atom.chain].x += atom.x;
+              chainCenters[atom.chain].y += atom.y;
+              chainCenters[atom.chain].z += atom.z;
+              chainCenters[atom.chain].count++;
+            }
+          });
+          
+          // Apply different colors to each chain and add labels
+          Array.from(chains).forEach((chainId, index) => {
+            const chainColor = chainColors[index % chainColors.length];
+            const styleConfig: any = {};
+            
+            switch (style) {
+              case 'cartoon':
+                styleConfig.cartoon = { color: chainColor };
+                break;
+              case 'stick':
+                styleConfig.stick = { color: chainColor };
+                break;
+              case 'sphere':
+                styleConfig.sphere = { color: chainColor };
+                break;
+            }
+            
+            // Apply style to this specific chain (protein atoms only)
+            viewerInstance.setStyle({ chain: chainId, hetflag: false }, styleConfig);
+            
+            // Add chain label if enabled
+            if (showLabels && chainCenters[chainId]) {
+              const center = chainCenters[chainId];
+              const avgPos = {
+                x: center.x / center.count,
+                y: center.y / center.count,
+                z: center.z / center.count
+              };
+              
+              viewerInstance.addLabel(`Chain ${chainId}`, {
+                position: avgPos,
+                backgroundColor: chainColor,
+                backgroundOpacity: 0.8,
+                fontColor: 'white',
+                fontSize: 12,
+                fontFamily: 'Arial',
+                borderThickness: 2,
+                borderColor: 'white',
+                borderOpacity: 0.8
+              });
+            }
+          });
         }
-      });
+      } else if (colorMode === 'default') {
+        // Default color mode - apply to all protein atoms
+        const styleConfig: any = {};
+        
+        switch (style) {
+          case 'cartoon':
+            styleConfig.cartoon = { 
+              color: 'spectrum',
+              colorscheme: 'rainbow'
+            };
+            break;
+          case 'stick':
+            styleConfig.stick = { colorscheme: 'default' };
+            break;
+          case 'sphere':
+            styleConfig.sphere = { colorscheme: 'default' };
+            break;
+        }
+        
+        viewerInstance.setStyle({ hetflag: false }, styleConfig);
+        
+        // Add chain labels for default mode if enabled
+        if (showLabels) {
+          const model = viewerInstance.getModel(0);
+          if (model) {
+            const atoms = model.selectedAtoms({ hetflag: false });
+            const chains = new Set();
+            const chainCenters: { [key: string]: { x: number, y: number, z: number, count: number } } = {};
+            
+            // Collect chains and calculate centers
+            atoms.forEach((atom: any) => {
+              if (atom.chain) {
+                chains.add(atom.chain);
+                if (!chainCenters[atom.chain]) {
+                  chainCenters[atom.chain] = { x: 0, y: 0, z: 0, count: 0 };
+                }
+                chainCenters[atom.chain].x += atom.x;
+                chainCenters[atom.chain].y += atom.y;
+                chainCenters[atom.chain].z += atom.z;
+                chainCenters[atom.chain].count++;
+              }
+            });
+            
+            // Add chain labels
+            Array.from(chains).forEach((chainId) => {
+              if (chainCenters[chainId]) {
+                const center = chainCenters[chainId];
+                const avgPos = {
+                  x: center.x / center.count,
+                  y: center.y / center.count,
+                  z: center.z / center.count
+                };
+                
+                viewerInstance.addLabel(`Chain ${chainId}`, {
+                  position: avgPos,
+                  backgroundColor: '#4A90E2',
+                  backgroundOpacity: 0.8,
+                  fontColor: 'white',
+                  fontSize: 12,
+                  fontFamily: 'Arial',
+                  borderThickness: 2,
+                  borderColor: 'white',
+                  borderOpacity: 0.8
+                });
+              }
+            });
+          }
+        }
+      }
+      
+      // Handle ligands separately if showing them
+      if (showLigs) {
+        viewerInstance.setStyle({ hetflag: true }, { stick: { color: 'red', radius: 0.3 } });
+        
+        // Add ligand labels if enabled
+        if (showLabels) {
+          const model = viewerInstance.getModel(0);
+          if (model) {
+            const ligandAtoms = model.selectedAtoms({ hetflag: true });
+            const ligandGroups: { [key: string]: any[] } = {};
+            
+            // Common molecules to exclude from labeling
+            const excludedMolecules = new Set([
+              'HOH', 'WAT', 'H2O', // Water
+              'SO4', 'PO4', 'CL', 'NA', 'K', 'MG', 'CA', 'ZN', 'FE', // Common ions
+              'ACE', 'NMA', 'FOR', 'EDO', 'GOL', 'PEG', // Common additives
+              'TRS', 'BIS', 'HEPES', 'TRIS', // Buffer molecules
+              'DMS', 'DMSO', 'MPD', 'PGE', 'BME' // Common solvents/additives
+            ]);
+            
+            // Group ligand atoms by residue, excluding water and common molecules
+            ligandAtoms.forEach((atom: any) => {
+              if (atom.resn && !excludedMolecules.has(atom.resn.toUpperCase())) {
+                const resKey = `${atom.resn}_${atom.resi}_${atom.chain}`;
+                if (!ligandGroups[resKey]) {
+                  ligandGroups[resKey] = [];
+                }
+                ligandGroups[resKey].push(atom);
+              }
+            });
+            
+            // Add labels for each ligand group
+            Object.entries(ligandGroups).forEach(([resKey, atoms]) => {
+              if (atoms.length > 0) {
+                const centerX = atoms.reduce((sum, atom) => sum + atom.x, 0) / atoms.length;
+                const centerY = atoms.reduce((sum, atom) => sum + atom.y, 0) / atoms.length;
+                const centerZ = atoms.reduce((sum, atom) => sum + atom.z, 0) / atoms.length;
+                
+                viewerInstance.addLabel(atoms[0].resn, {
+                  position: { x: centerX, y: centerY, z: centerZ },
+                  backgroundColor: 'red',
+                  backgroundOpacity: 0.8,
+                  fontColor: 'white',
+                  fontSize: 10,
+                  fontFamily: 'Arial',
+                  borderThickness: 1,
+                  borderColor: 'white'
+                });
+              }
+            });
+          }
+        }
+      }
+      
+      viewerInstance.render();
+      console.log('Style applied successfully');
+    } catch (error) {
+      console.error('Error applying style:', error);
     }
-    
-    viewerInstance.render();
   };
 
   const handleStyleChange = (newStyle: 'cartoon' | 'stick' | 'sphere') => {
-    if (viewer) {
-      setCurrentStyle(newStyle);
-      applyStyle(viewer, newStyle, showLigands);
-    }
+    console.log('Style changing to:', newStyle);
+    setCurrentStyle(newStyle);
+  };
+
+  const handleColorModeChange = (newColorMode: 'chain' | 'default') => {
+    console.log('Color mode changing to:', newColorMode);
+    setColorMode(newColorMode);
   };
 
   const toggleLigands = () => {
-    if (viewer) {
-      const newShowLigands = !showLigands;
-      setShowLigands(newShowLigands);
-      applyStyle(viewer, currentStyle, newShowLigands);
-    }
+    console.log('Toggling ligands, current:', showLigands);
+    setShowLigands(prev => !prev);
+  };
+
+  const toggleLabels = () => {
+    console.log('Toggling labels, current:', showLabels);
+    setShowLabels(prev => !prev);
   };
 
   const downloadImage = () => {
@@ -137,82 +329,130 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col">
-      {/* Header with controls */}
-      <div className="flex flex-wrap items-center justify-between p-4 border-b bg-gray-50">
-        <div className="flex items-center gap-2">
-          <h3 className="text-lg font-semibold">PDB: {pdbId.toUpperCase()}</h3>
-          <Badge variant="outline">3D Structure</Badge>
+    <div className="w-full h-full flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+      {/* Title Section - Two aligned rows */}
+      <div className="px-4 py-4 bg-white border-b border-gray-200">
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex-1 text-center">
+            <h3 className="text-xl font-bold text-gray-900">{pdbId.toUpperCase()}</h3>
+          </div>
+          {onClose && (
+            <button 
+              className="p-2 text-white bg-black hover:bg-gray-800 rounded-md transition-colors"
+              onClick={onClose}
+              title="Close viewer"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
         </div>
-        
-        <div className="flex flex-wrap items-center gap-2">
-          {/* Style controls */}
-          <div className="flex gap-1">
-            {(['cartoon', 'stick', 'sphere'] as const).map((style) => (
-              <Button
-                key={style}
-                variant={currentStyle === style ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => handleStyleChange(style)}
-                className="capitalize"
-              >
-                {style}
-              </Button>
-            ))}
+        <div className="flex items-center justify-center">
+          <p className="text-sm text-gray-600">3D Structure</p>
+        </div>
+      </div>
+      
+      {/* Controls Section */}
+      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 border-b border-gray-200">
+        <div className="flex items-center space-x-4">
+          {/* Style dropdown */}
+          <div className="flex flex-col">
+            <label className="text-xs font-medium text-gray-600 mb-1">Style</label>
+            <select
+              value={currentStyle}
+              onChange={(e) => handleStyleChange(e.target.value as 'cartoon' | 'stick' | 'sphere')}
+              className="px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="cartoon">Cartoon</option>
+              <option value="stick">Stick</option>
+              <option value="sphere">Sphere</option>
+            </select>
           </div>
           
-          {/* Ligand toggle */}
-          <Button
-            variant={showLigands ? 'default' : 'outline'}
-            size="sm"
-            onClick={toggleLigands}
-          >
-            Ligands
-          </Button>
+          {/* Color mode dropdown */}
+          <div className="flex flex-col">
+            <label className="text-xs font-medium text-gray-600 mb-1">Color</label>
+            <select
+              value={colorMode}
+              onChange={(e) => handleColorModeChange(e.target.value as 'chain' | 'default')}
+              className="px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="chain">By Chain</option>
+              <option value="default">Default</option>
+            </select>
+          </div>
           
-          {/* Download button */}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={downloadImage}
-            disabled={loading || !!error}
-          >
-            📷 Save
-          </Button>
+          {/* Toggle buttons */}
+          <div className="flex space-x-2">
+            <button
+              className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+                showLabels 
+                  ? 'bg-black text-white shadow-sm hover:bg-gray-800' 
+                  : 'bg-white text-black border border-black hover:bg-gray-100'
+              }`}
+              onClick={toggleLabels}
+              title="Toggle chain and ligand labels"
+            >
+              Labels
+            </button>
+            
+            <button
+              className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+                showLigands 
+                  ? 'bg-black text-white shadow-sm hover:bg-gray-800' 
+                  : 'bg-white text-black border border-black hover:bg-gray-100'
+              }`}
+              onClick={toggleLigands}
+              title="Show/hide ligands and cofactors"
+            >
+              Ligands
+            </button>
+          </div>
           
-          {/* Close button */}
-          {onClose && (
-            <Button variant="outline" size="sm" onClick={onClose}>
-              ✕
-            </Button>
-          )}
+          {/* Action buttons */}
+          <div className="flex space-x-1">
+            <button
+              className="p-2 text-white bg-black hover:bg-gray-800 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              onClick={downloadImage}
+              disabled={loading || !!error}
+              title="Download structure image"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Viewer container */}
-      <div className="flex-1 relative">
+      <div className="flex-1 relative bg-gray-50">
         {loading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90 z-10">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-              <p className="text-sm text-gray-600">Loading {pdbId.toUpperCase()}...</p>
+              <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mx-auto mb-3"></div>
+              <p className="text-sm font-medium text-gray-700">Loading {pdbId.toUpperCase()}...</p>
             </div>
           </div>
         )}
         
         {error && (
-          <div className="absolute inset-0 flex items-center justify-center bg-red-50">
-            <div className="text-center p-4">
-              <p className="text-red-600 font-medium mb-2">Error loading structure</p>
-              <p className="text-sm text-red-500">{error}</p>
-              <Button 
-                variant="outline" 
-                size="sm" 
+          <div className="absolute inset-0 flex items-center justify-center bg-red-50 z-10">
+            <div className="text-center p-6 max-w-md">
+              <div className="w-12 h-12 mx-auto mb-4 text-red-500">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-red-900 mb-2">Error loading structure</h3>
+              <p className="text-sm text-red-700 mb-4">{error}</p>
+              <button 
+                className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors"
                 onClick={initializeViewer}
-                className="mt-2"
               >
-                Retry
-              </Button>
+                Try Again
+              </button>
             </div>
           </div>
         )}
@@ -221,18 +461,102 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
           ref={viewerRef} 
           className="w-full h-full min-h-[400px]"
           style={{ 
-            opacity: loading || error ? 0.3 : 1,
+            opacity: loading || error ? 0.1 : 1,
             transition: 'opacity 0.3s ease'
           }}
         />
       </div>
       
       {/* Footer with instructions */}
-      <div className="p-2 border-t bg-gray-50 text-xs text-gray-600">
-        <p>🖱️ Left click + drag: rotate | 🖱️ Right click + drag: zoom | 🖱️ Middle click + drag: pan</p>
+      <div className="px-4 py-2 bg-gray-50 border-t border-gray-200 text-xs text-gray-600">
+        <div className="flex items-center justify-center space-x-4">
+          <span className="flex items-center">
+            <span className="w-2 h-2 bg-blue-500 rounded-full mr-1"></span>
+            Left drag: rotate
+          </span>
+          <span className="flex items-center">
+            <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+            Right drag: zoom
+          </span>
+          <span className="flex items-center">
+            <span className="w-2 h-2 bg-purple-500 rounded-full mr-1"></span>
+            Middle drag: pan
+          </span>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Viewer;
+// Demo component to show the viewer in action
+const ProteinViewerDemo = () => {
+  const [selectedPdb, setSelectedPdb] = useState('1crn');
+  const [showViewer, setShowViewer] = useState(true);
+  
+  const sampleProteins = [
+    { id: '1crn', name: 'Crambin' },
+    { id: '1hho', name: 'Hemoglobin' },
+    { id: '1bna', name: 'DNA Double Helix' },
+    { id: '2hhb', name: 'Hemoglobin Beta' }
+  ];
+
+  return (
+    <div className="w-full max-w-7xl mx-auto p-6 bg-gray-50 min-h-screen">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div className="p-6 border-b border-gray-200">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Protein Structure Viewer</h1>
+          <p className="text-gray-600 mb-6">Interactive 3D visualization of protein structures from the Protein Data Bank</p>
+          
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center space-x-2">
+              <label className="text-sm font-medium text-gray-700">Sample Proteins:</label>
+              <div className="flex space-x-2">
+                {sampleProteins.map((protein) => (
+                  <button
+                    key={protein.id}
+                    className={`px-3 py-1.5 text-sm rounded-md border transition-colors ${
+                      selectedPdb === protein.id 
+                        ? 'bg-blue-600 text-white border-blue-600' 
+                        : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                    }`}
+                    onClick={() => setSelectedPdb(protein.id)}
+                  >
+                    {protein.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <label className="text-sm font-medium text-gray-700">Custom PDB ID:</label>
+              <input
+                type="text"
+                value={selectedPdb}
+                onChange={(e) => setSelectedPdb(e.target.value.toLowerCase())}
+                placeholder="e.g., 1crn"
+                className="px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <button
+                className="px-4 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
+                onClick={() => setShowViewer(true)}
+              >
+                Load
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {showViewer && (
+          <div className="h-[800px]">
+            <Viewer 
+              pdbId={selectedPdb} 
+              onClose={() => setShowViewer(false)}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ProteinViewerDemo;
