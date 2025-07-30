@@ -107,7 +107,7 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
         const model = viewerInstance.getModel(0);
         if (model) {
           const atoms = model.selectedAtoms({});
-          const chains = new Set();
+          const chains = new Set<string>();
           const chainCenters: { [key: string]: { x: number, y: number, z: number, count: number } } = {};
           
           // Collect chains and calculate centers
@@ -125,7 +125,7 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
           });
           
           // Apply different colors to each chain and add labels
-          Array.from(chains).forEach((chainId, index) => {
+          Array.from(chains).forEach((chainId: string, index: number) => {
             const chainColor = chainColors[index % chainColors.length];
             const styleConfig: any = {};
             
