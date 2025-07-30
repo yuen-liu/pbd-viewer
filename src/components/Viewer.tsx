@@ -67,12 +67,7 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
       newViewer.addModel(pdbData, 'pdb');
       
       // Set initial style
-      applyStyle(newViewer, currentStyle);
-      
-      // Highlight ligands if enabled
-      if (showLigands) {
-        highlightLigands(newViewer);
-      }
+      applyStyle(newViewer, currentStyle, showLigands);
       
       // Set view and render
       newViewer.zoomTo();
@@ -87,51 +82,47 @@ export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
     }
   };
 
-  const applyStyle = (viewerInstance: any, style: string) => {
+  const applyStyle = (viewerInstance: any, style: string, includeLigands: boolean = showLigands) => {
     viewerInstance.setStyle({}, {}); // Clear existing styles
     
+    // Apply main protein style
     switch (style) {
       case 'cartoon':
-        viewerInstance.setStyle({}, { cartoon: { color: 'spectrum' } });
+        viewerInstance.setStyle({ hetflag: false }, { cartoon: { color: 'spectrum' } });
         break;
       case 'stick':
-        viewerInstance.setStyle({}, { stick: { colorscheme: 'Jmol' } });
+        viewerInstance.setStyle({ hetflag: false }, { stick: { colorscheme: 'Jmol' } });
         break;
       case 'sphere':
-        viewerInstance.setStyle({}, { sphere: { colorscheme: 'Jmol' } });
+        viewerInstance.setStyle({ hetflag: false }, { sphere: { colorscheme: 'Jmol' } });
         break;
+    }
+    
+    // Apply ligand style if enabled
+    if (includeLigands) {
+      viewerInstance.setStyle({ hetflag: true }, { 
+        stick: { 
+          colorscheme: 'greenCarbon',
+          radius: 0.3
+        }
+      });
     }
     
     viewerInstance.render();
   };
 
-  const highlightLigands = (viewerInstance: any) => {
-    // Highlight heteroatoms (ligands) in a different style
-    viewerInstance.setStyle({ hetflag: true }, { 
-      stick: { 
-        colorscheme: 'greenCarbon',
-        radius: 0.3
-      }
-    });
-  };
-
   const handleStyleChange = (newStyle: 'cartoon' | 'stick' | 'sphere') => {
     if (viewer) {
       setCurrentStyle(newStyle);
-      applyStyle(viewer, newStyle);
-      if (showLigands) {
-        highlightLigands(viewer);
-      }
+      applyStyle(viewer, newStyle, showLigands);
     }
   };
 
   const toggleLigands = () => {
     if (viewer) {
-      setShowLigands(!showLigands);
-      applyStyle(viewer, currentStyle);
-      if (!showLigands) {
-        highlightLigands(viewer);
-      }
+      const newShowLigands = !showLigands;
+      setShowLigands(newShowLigands);
+      applyStyle(viewer, currentStyle, newShowLigands);
     }
   };
 

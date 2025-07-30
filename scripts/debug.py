@@ -1,80 +1,11 @@
 #!/usr/bin/env python3
 """
-Fetch PDB metadata using Python
-Fixed version with working organism extraction
+Fixed PDB organism extraction - corrected GraphQL query and REST API approach
 """
 
 import requests
 import json
 import time
-import sys
-from pathlib import Path
-
-# PDB REST API endpoints
-PDB_SEARCH_API = 'https://search.rcsb.org/rcsbsearch/v2/query'
-PDB_DATA_API = 'https://data.rcsb.org/rest/v1/core/entry'
-PDB_GRAPHQL_API = 'https://data.rcsb.org/graphql'
-
-def fetch_pdb_batch(start=0, rows=100):
-    """Fetch a batch of PDB entries"""
-    query = {
-        "query": {
-            "type": "terminal",
-            "service": "text",
-            "parameters": {
-                "attribute": "exptl.method",
-                "operator": "in",
-                "value": ["X-RAY DIFFRACTION", "ELECTRON MICROSCOPY", "NMR"]
-            }
-        },
-        "request_options": {
-            "paginate": {
-                "start": start,
-                "rows": rows
-            },
-            "sort": [
-                {
-                    "sort_by": "score",
-                    "direction": "desc"
-                }
-            ]
-        },
-        "return_type": "entry"
-    }
-    
-    try:
-        print(f"Making API request to: {PDB_SEARCH_API}")
-        response = requests.post(
-            PDB_SEARCH_API,
-            json=query,
-            headers={'Content-Type': 'application/json', 'Accept': 'application/json'},
-            timeout=30
-        )
-        
-        print(f"Response status: {response.status_code}")
-        
-        if response.status_code == 200:
-            data = response.json()
-            result_set = data.get('result_set', [])
-            # Extract PDB IDs from the result set
-            pdb_ids = []
-            for item in result_set:
-                if isinstance(item, dict) and 'identifier' in item:
-                    pdb_ids.append(item['identifier'])
-                elif isinstance(item, str):
-                    pdb_ids.append(item)
-            print(f"Received {len(pdb_ids)} PDB IDs")
-            return pdb_ids
-        else:
-            print(f"Error: {response.status_code} - {response.text}")
-            return []
-            
-    except requests.exceptions.RequestException as e:
-        print(f"Request error: {e}")
-        return []
-    except json.JSONDecodeError as e:
-        print(f"JSON decode error: {e}")
-        return []
 
 def get_organism_corrected(pdb_id):
     """Get organism using multiple corrected approaches"""
@@ -98,6 +29,7 @@ def get_organism_corrected(pdb_id):
 
 def try_corrected_graphql(pdb_id):
     """Try GraphQL with corrected field names"""
+    print(f"Trying corrected GraphQL for {pdb_id}...")
     
     # Corrected GraphQL query without invalid fields
     query = """
@@ -125,7 +57,7 @@ def try_corrected_graphql(pdb_id):
     
     try:
         response = requests.post(
-            PDB_GRAPHQL_API,
+            'https://data.rcsb.org/graphql',
             json={'query': query, 'variables': {'pdb_id': pdb_id}},
             headers={'Content-Type': 'application/json'},
             timeout=30
@@ -136,6 +68,7 @@ def try_corrected_graphql(pdb_id):
             
             # Check for errors
             if 'errors' in data:
+                print(f"GraphQL errors: {data['errors']}")
                 return "Unknown"
             
             if 'data' in data and data['data'] and data['data']['entry']:
@@ -162,15 +95,17 @@ def try_corrected_graphql(pdb_id):
                                 if isinstance(source_data, dict) and name_key in source_data:
                                     organism = source_data[name_key]
                                     if organism and organism.strip() and not organism.lower().startswith('j '):  # Avoid journal names
+                                        print(f"✓ Found organism via GraphQL: {organism}")
                                         return organism.strip()
                             
     except Exception as e:
-        pass  # Silent fallback to other methods
+        print(f"GraphQL error for {pdb_id}: {e}")
     
     return "Unknown"
 
 def try_rest_entities(pdb_id):
     """Try REST API for polymer entities with correct endpoints"""
+    print(f"Trying REST entities for {pdb_id}...")
     
     # Try the polymer entities endpoint
     try:
@@ -200,15 +135,17 @@ def try_rest_entities(pdb_id):
                         if organism and isinstance(organism, str) and organism.strip():
                             # Make sure it's not a journal name
                             if not any(journal in organism.lower() for journal in ['j mol', 'nature', 'science', 'proc natl']):
+                                print(f"✓ Found organism via REST entities: {organism}")
                                 return organism.strip()
                     
     except Exception as e:
-        pass  # Silent fallback
+        print(f"REST entities error for {pdb_id}: {e}")
     
     return "Unknown"
 
 def try_entry_rest(pdb_id):
     """Try entry-level REST API for organism info"""
+    print(f"Trying entry REST for {pdb_id}...")
     
     try:
         url = f"https://data.rcsb.org/rest/v1/core/entry/{pdb_id}"
@@ -228,10 +165,11 @@ def try_entry_rest(pdb_id):
                 if organism and isinstance(organism, str) and organism.strip():
                     # Make sure it's not a journal name
                     if not any(journal in organism.lower() for journal in ['j mol', 'nature', 'science', 'proc natl']):
+                        print(f"✓ Found organism via entry REST: {organism}")
                         return organism.strip()
                         
     except Exception as e:
-        pass  # Silent fallback
+        print(f"Entry REST error for {pdb_id}: {e}")
     
     return "Unknown"
 
@@ -254,8 +192,20 @@ def get_nested_value(data, path):
     except (KeyError, IndexError, TypeError):
         return None
 
-def fetch_detailed_metadata(pdb_ids):
-    """Fetch detailed metadata for PDB IDs one by one"""
+def test_organism_extraction():
+    """Test the corrected organism extraction"""
+    test_pdbs = ["1HHO", "1CRN", "6LU7", "1IGY", "2LYZ"]  # Known PDB IDs
+    
+    for pdb_id in test_pdbs:
+        print(f"\n=== Testing {pdb_id} ===")
+        organism = get_organism_corrected(pdb_id)
+        print(f"Final result for {pdb_id}: {organism}")
+        print("-" * 50)
+        time.sleep(1)
+
+# Updated function for your main script
+def fetch_detailed_metadata_fixed(pdb_ids):
+    """Updated fetch function with corrected organism extraction"""
     results = []
     
     for i, pdb_id in enumerate(pdb_ids):
@@ -263,7 +213,7 @@ def fetch_detailed_metadata(pdb_ids):
             print(f"Fetching detailed metadata for {pdb_id} ({i+1}/{len(pdb_ids)})...")
             
             # Fetch entry-level data
-            entry_url = f"{PDB_DATA_API}/{pdb_id}"
+            entry_url = f"https://data.rcsb.org/rest/v1/core/entry/{pdb_id}"
             entry_response = requests.get(
                 entry_url,
                 headers={'Accept': 'application/json'},
@@ -280,7 +230,7 @@ def fetch_detailed_metadata(pdb_ids):
             organism = get_organism_corrected(pdb_id)
             
             if entry and entry.get('rcsb_id'):
-                metadata = extract_metadata(entry, organism)
+                metadata = extract_metadata_fixed(entry, organism)
                 if metadata:
                     results.append(metadata)
                     print(f"✓ Successfully processed {pdb_id} - Organism: {organism}")
@@ -289,18 +239,16 @@ def fetch_detailed_metadata(pdb_ids):
             else:
                 print(f"✗ Invalid entry data for {pdb_id}")
                 
-            # Rate limiting - be nice to the API
+            # Rate limiting
             time.sleep(0.3)
             
-        except requests.exceptions.RequestException as e:
-            print(f"✗ Request error for {pdb_id}: {e}")
-        except json.JSONDecodeError as e:
-            print(f"✗ JSON decode error for {pdb_id}: {e}")
+        except Exception as e:
+            print(f"✗ Error for {pdb_id}: {e}")
     
     return results
 
-def extract_metadata(entry, organism):
-    """Extract metadata from PDB entry"""
+def extract_metadata_fixed(entry, organism):
+    """Extract metadata with corrected organism"""
     try:
         # Get protein name
         protein_name = "Unknown Protein"
@@ -339,48 +287,5 @@ def extract_metadata(entry, organism):
         print(f"Error extracting metadata for {entry.get('rcsb_id', 'unknown')}: {e}")
         return None
 
-def main():
-    target_count = int(sys.argv[1]) if len(sys.argv) > 1 else 10000
-    
-    print(f"Starting to fetch metadata for ~{target_count} PDB entries...")
-    
-    # Fetch PDB IDs
-    all_pdb_ids = []
-    batch_size = 100
-    
-    for start in range(0, target_count, batch_size):
-        rows = min(batch_size, target_count - start)
-        print(f"Fetching PDB IDs batch {start//batch_size + 1}...")
-        
-        batch_ids = fetch_pdb_batch(start, rows)
-        if not batch_ids:
-            print("No more results available")
-            break
-            
-        all_pdb_ids.extend(batch_ids)
-        
-        if len(all_pdb_ids) >= target_count:
-            all_pdb_ids = all_pdb_ids[:target_count]
-            break
-    
-    print(f"Found {len(all_pdb_ids)} PDB IDs. Fetching detailed metadata...")
-    
-    # Fetch detailed metadata
-    metadata_results = fetch_detailed_metadata(all_pdb_ids)
-    
-    # Save results
-    output_path = Path(__file__).parent.parent / 'public' / 'pdb-summary.json'
-    output_path.parent.mkdir(exist_ok=True)
-    
-    with open(output_path, 'w') as f:
-        json.dump(metadata_results, f, indent=2)
-    
-    print(f"✅ Successfully saved {len(metadata_results)} PDB entries to {output_path}")
-    
-    if metadata_results:
-        print(f"📊 Sample entry: {metadata_results[0]['pdb_id']} - {metadata_results[0]['protein_name']} - {metadata_results[0]['organism']}")
-    
-    print("✅ Metadata fetch completed successfully!")
-
 if __name__ == "__main__":
-    main()
+    test_organism_extraction()
