@@ -18,12 +18,6 @@ export default function Home() {
           </Link>
         </div>
       </main>
-      
-      <footer className="py-6 border-t border-gray-100">
-        <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-          <p style={{ fontFamily: 'Calibri, Arial, sans-serif' }}>© {new Date().getFullYear()} PDB Explorer</p>
-        </div>
-      </footer>
     </div>
   );
 }
