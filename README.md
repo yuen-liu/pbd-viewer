@@ -1,8 +1,6 @@
 # PDB Explorer
 
-A modern, user-friendly interface for exploring protein structures from the Protein Data Bank (PDB).
-
-![PDB Explorer Screenshot](https://via.placeholder.com/1200x600.png?text=PDB+Explorer+Screenshot)
+Neo Scholars take-home: A modern, user-friendly interface for exploring protein structures from the Protein Data Bank (PDB).
 
 ## Features
 
@@ -13,6 +11,16 @@ A modern, user-friendly interface for exploring protein structures from the Prot
 - **Responsive**: Works seamlessly on all devices
 
 ## Quick Start
+
+### Prerequisites
+- Node.js 18+ and npm
+- Python 3.8+ (for data fetching script)
+
+> **Note on Supabase**: The app can run in two modes:
+> - **With Supabase (Recommended)**: For full functionality
+> - **Without Supabase**: For local development with sample data
+
+### Setup Instructions
 
 1. **Clone the repository**
    ```bash
@@ -25,11 +33,51 @@ A modern, user-friendly interface for exploring protein structures from the Prot
    npm install
    ```
 
-3. **Run the development server**
+3. **Set up environment variables (Optional for Supabase)**
+   For full functionality, create a `.env.local` file with your Supabase credentials:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+   > **Note**: You can skip this step to run the app with sample data locally.
+
+4. **Run the development server**
    ```bash
    npm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Loading PDB Data
+
+The app comes with sample data that works out of the box. For a more complete dataset:
+
+1. **Install Python dependencies**
+   ```bash
+   pip install requests tqdm
+   ```
+
+2. **Fetch PDB data**
+   ```bash
+   # For a small test dataset (100 entries)
+   npm run fetch-pdb-small
+   
+   # For the full dataset (~1000 entries, takes 10-15 minutes)
+   npm run fetch-pdb
+   ```
+
+3. **(Optional) Set up Supabase**
+   For persistent storage and full functionality:
+   1. Create a new project in Supabase
+   2. Run the SQL schema from `supabase/schema.sql` in the SQL editor
+   3. Migrate the data:
+      ```bash
+      npm run migrate-supabase
+      ```
+
+4. **Verify the setup**
+   - The app will automatically use Supabase if credentials are provided
+   - Without Supabase, it falls back to local sample data
+   - Check the browser console for connection status
 
 ## Tech Stack
 
