@@ -2,21 +2,47 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-// Type definitions for 3Dmol
+/**
+ * Type definitions for the 3DMol.js library
+ * This extends the global window object to include the 3DMol instance
+ */
 declare global {
   interface Window {
-    $3Dmol: any;
+    $3Dmol: any; // 3DMol.js library instance
   }
 }
 
+/**
+ * Props for the Viewer component
+ * @property {string} pdbId - The PDB ID of the protein to display
+ * @property {() => void} [onClose] - Optional callback when the viewer is closed
+ */
 interface ViewerProps {
   pdbId: string;
   onClose?: () => void;
 }
 
+/**
+ * 3D Protein Structure Viewer Component
+ * 
+ * This component renders an interactive 3D visualization of protein structures using 3DMol.js.
+ * It supports multiple visualization styles, selection of different chains, and basic manipulation.
+ * 
+ * Features:
+ * - Loads and displays PDB structures from RCSB PDB
+ * - Multiple visualization styles (cartoon, stick, sphere)
+ * - Chain selection and highlighting
+ * - Basic camera controls (rotate, zoom, pan)
+ * - Loading states and error handling
+ */
 export const Viewer: React.FC<ViewerProps> = ({ pdbId, onClose }) => {
+  // Reference to the DOM element where 3DMol viewer will be mounted
   const viewerRef = useRef<HTMLDivElement>(null);
+  
+  // State to hold the 3DMol viewer instance
   const [viewer, setViewer] = useState<any>(null);
+  
+  // Loading state for the viewer
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentStyle, setCurrentStyle] = useState<'cartoon' | 'stick' | 'sphere'>('cartoon');

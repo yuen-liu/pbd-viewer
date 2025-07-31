@@ -1,170 +1,136 @@
-# PDB Viewer
+# PDB Explorer
 
-A full-stack web application for searching and visualizing protein structures from the Protein Data Bank (PDB).
+A modern, user-friendly interface for exploring protein structures from the Protein Data Bank (PDB).
 
-## Features
+![PDB Explorer Screenshot](https://via.placeholder.com/1200x600.png?text=PDB+Explorer+Screenshot)
 
-🔍 **Advanced Search**: Fuzzy search through PDB entries by ID, protein name, or organism using Fuse.js
+## ✨ Features
 
-🧬 **3D Visualization**: Interactive protein structure viewer powered by 3Dmol.js with multiple rendering styles
+- **Clean Interface**: Minimalist design focused on usability
+- **Fast Search**: Instantly find protein structures by ID, name, or organism
+- **3D Visualization**: Interactive viewer with multiple rendering styles
+- **Bookmarking**: Save and manage your favorite structures
+- **Responsive**: Works seamlessly on all devices
 
-📱 **Mobile Responsive**: Optimized for all screen sizes with modern UI components
+## 🚀 Quick Start
 
-🔖 **Bookmarking**: Save favorite protein structures locally
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yuen-liu/pbd-viewer.git
+   cd pbd-viewer
+   ```
 
-⚡ **Performance**: Fast search with live results and optimized data loading
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Tech Stack
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- **Frontend**: Next.js 15 with React 19
-- **Styling**: Tailwind CSS + ShadCN UI components
-- **Search**: Fuse.js for fuzzy searching
-- **3D Rendering**: 3Dmol.js for protein visualization
-- **Data**: PDB REST API for metadata fetching
-- **Deployment**: Vercel-ready
+## 🛠️ Tech Stack
 
-## Getting Started
+- **Framework**: Next.js 15 with TypeScript
+- **Styling**: Tailwind CSS + ShadCN UI
+- **3D Visualization**: 3Dmol.js
+- **Search**: Fuse.js for client-side fuzzy search
+- **State Management**: React Hooks
+- **Database**: Supabase
+- **Deployment**: Vercel
 
-### 1. Install Dependencies
-
-```bash
-npm install
-```
-
-### 2. Fetch PDB Metadata (Optional)
-
-To get a full dataset of ~5000 PDB entries, use the Python script:
-
-```bash
-# Fetch full dataset (takes ~10-15 minutes)
-npm run fetch-pdb
-
-# Or fetch smaller dataset for testing (100 entries)
-npm run fetch-pdb-small
-```
-
-**Note**: The app includes sample data and will work without fetching the full dataset.
-
-### 3. Run Development Server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the application.
-
-## Project Structure
+## 📂 Project Structure
 
 ```
 src/
-├── app/
-│   ├── page.tsx          # Main application page
-│   └── globals.css       # Global styles
-├── components/
-│   ├── Viewer.tsx        # 3D protein structure viewer
-│   ├── SearchInterface.tsx # Search and results interface
-│   └── ui/              # ShadCN UI components
-scripts/
-└── fetch-pdb-metadata.js # PDB data fetching script
-public/
-└── pdb-summary.json     # Generated metadata file
+├── app/                  # App router pages
+│   ├── page.tsx         # Landing page
+│   └── search/          # Search interface
+│       └── page.tsx     # Search results and viewer
+├── components/          # Reusable components
+│   ├── Viewer.tsx       # 3D structure viewer
+│   └── SearchInterface.tsx # Search functionality
+└── lib/                 # Utility functions
 ```
 
-## Key Components
+## 🔍 Usage
 
-### Viewer Component
+1. **Search**
+   - Enter keywords to search through the PDB database
+   - Results update in real-time as you type
 
-- **File**: `src/components/Viewer.tsx`
-- **Features**: 
-  - 3D protein structure rendering
-  - Multiple visualization styles (cartoon, stick, sphere)
-  - Ligand highlighting
-  - Interactive controls (rotate, zoom, pan)
-  - Screenshot download
+2. **View Structures**
+   - Click "View 3D" to open the interactive viewer
+   - Rotate, zoom, and pan the 3D structure
+   - Toggle between different visualization styles
 
-### Search Interface
+3. **Save Favorites**
+   - Bookmark structures for quick access later
+   - View all bookmarked structures in one place
 
-- **File**: `src/components/SearchInterface.tsx`
-- **Features**:
-  - Real-time fuzzy search
-  - Bookmarking system
-  - Responsive card layout
-  - Modal integration with 3D viewer
+## 🌐 Live Demo
 
-### Metadata Fetcher
+Check out the live demo: [https://pdb-explorer.vercel.app](https://pdb-explorer.vercel.app)
 
-- **File**: `scripts/fetch-pdb-metadata.js`
-- **Features**:
-  - Fetches high-quality structures (X-ray, EM, NMR)
-  - Filters by resolution (0.5-4.0 Å)
-  - Extracts comprehensive metadata
-  - Rate-limited API calls
+## 🔌 APIs & Libraries Used
 
-## Usage
+### External Services
+This project integrates with the following RCSB PDB APIs:
 
-1. **Search**: Type in the search box to find proteins by PDB ID, name, or organism
-2. **View**: Click "View 3D Structure" to open the interactive 3D viewer
-3. **Bookmark**: Click the bookmark icon to save favorite structures
-4. **Visualize**: Use the style controls in the viewer to change rendering modes
-5. **Download**: Save screenshots of protein structures
+- **PDB Search API**: For querying protein structures with advanced search capabilities
+  - Endpoint: `https://search.rcsb.org/rcsbsearch/v2/query`
+  - Used for: Searching structures by various criteria including molecule name, organism, and experiment type
 
-## API Integration
+- **PDB Data API**: For fetching detailed metadata about protein structures
+  - Endpoint: `https://data.rcsb.org/rest/v1/core/entry/{entry_id}`
+  - Used for: Retrieving comprehensive information about specific PDB entries
 
-The app integrates with:
+- **PDB File Download**: For fetching PDB structure files
+  - Endpoint: `https://files.rcsb.org/download/{pdb_id}.pdb`
+  - Used for: Downloading PDB structure files for 3D visualization
 
-- **PDB Search API**: For querying protein structures
-- **PDB Data API**: For fetching detailed metadata
-- **RCSB PDB Files**: For downloading structure files
+- **PDB 1D Coordinate Service**: For getting sequence and structure annotations
+  - Endpoint: `https://www.ebi.ac.uk/pdbe/api/pdb/entry/summary/{pdb_id}`
+  - Used for: Additional structural and experimental metadata
 
-## Performance Optimizations
+### Core Libraries
 
-- **Lazy Loading**: 3Dmol.js loaded on demand
-- **Search Debouncing**: Optimized search performance
-- **Result Limiting**: Capped at 50 results for fast rendering
-- **Local Storage**: Bookmarks persisted locally
+#### UI Components
+- **Radix UI**: Unstyled, accessible UI primitives
+  - Used for: Building accessible dialog and interaction components
+  - [Website](https://www.radix-ui.com/)
 
-## Deployment
+- **Lucide React**: Beautiful & consistent icons
+  - Used for: UI icons throughout the application
+  - [GitHub](https://github.com/lucide-icons/lucide)
 
-### Vercel (Recommended)
+#### Data & State
+- **Fuse.js**: Lightweight fuzzy-search library
+  - Used for: Client-side fuzzy search across PDB entries
+  - [GitHub](https://github.com/krisk/Fuse)
 
-1. Push to GitHub repository
-2. Connect to Vercel
-3. Deploy automatically
+- **3DMol.js**: WebGL based molecular visualization
+  - Used for: 3D rendering of protein structures
+  - [Website](https://3dmol.org/)
 
-### Manual Build
+- **Supabase**: Open source Firebase alternative
+  - Used for: Database and backend services
+  - [Website](https://supabase.com/)
 
-```bash
-npm run build
-npm start
-```
-
-## Bonus Features Implemented
-
-✅ **Ligand Highlighting**: Heteroatoms highlighted in different colors
-
-✅ **Style Toggling**: Multiple visualization modes (cartoon, stick, sphere)
-
-✅ **Bookmarking**: Save and filter favorite structures
-
-✅ **Mobile Responsive**: Works on all devices
+#### Utilities
+- **clsx & tailwind-merge**: For dynamic class name composition
+- **class-variance-authority**: For type-safe component variants
 
 ✅ **Performance Optimized**: Fast search and rendering
 
-## Future Enhancements
+## Future Directions I'm thinking about
 
-- Dark mode toggle
-- Advanced filtering (resolution, method, date)
-- Protein comparison view
+- Semantic search: I'm thinking of using the sequence-transformers API to enable this --> would mean users could input functional queries: ex. something like "proteins that phosphorylate tyrosines"
+- Structural search: I'm thinking of using APIs like Foldseek and RCSB’s structural similarity endpoint or embedding AlphaFold2 structures via GVPs or pretrained graph models --> definitely very useful, but this would take more time.
+- Fetch more PDB data (currently only 1000 PDB entries are in the database) and scale up
+- Implement deep links for better SEO & user experience
+- Add an MCP server so the app can be deployed by agents
 - Export to various formats
-- User accounts and cloud bookmarks
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details
+- User accounts and cloud bookmarks: definitely doable using Supabase

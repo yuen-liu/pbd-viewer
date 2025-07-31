@@ -1,10 +1,35 @@
+/**
+ * Search Page Component
+ * 
+ * This page provides the main interface for searching and browsing PDB entries.
+ * It handles data loading from multiple sources with fallbacks:
+ * 1. Primary: Supabase database
+ * 2. Fallback 1: Local JSON file
+ * 3. Fallback 2: Sample hardcoded data
+ * 
+ * Features:
+ * - Server-side data loading with Suspense for better UX
+ * - Graceful degradation if database is unavailable
+ * - Loading states and error handling
+ */
+
 import { Suspense } from 'react';
-import SearchInterface from '@/components/SearchInterface';
-import { pdbService } from '@/lib/supabase';
 import fs from 'fs';
 import path from 'path';
 
-// Sample PDB data for development - replace with actual data loading
+// Local imports
+import SearchInterface from '@/components/SearchInterface';
+import { pdbService } from '@/lib/supabase';
+
+/**
+ * Sample PDB Data
+ * 
+ * Hardcoded sample data used as a fallback when:
+ * 1. Supabase is not available
+ * 2. Local JSON file cannot be loaded
+ * 
+ * @type {Array<import('@/components/SearchInterface').PDBEntry>}
+ */
 const samplePDBData = [
   {
     pdb_id: '1crn',
@@ -22,6 +47,16 @@ const samplePDBData = [
   // ... rest of the sample data
 ];
 
+/**
+ * Loads PDB data with fallback mechanisms
+ * 
+ * Data loading strategy:
+ * 1. Try to load from Supabase (production)
+ * 2. Fall back to local JSON file (development)
+ * 3. Fall back to hardcoded sample data (last resort)
+ * 
+ * @returns {Promise<Array<import('@/components/SearchInterface').PDBEntry>>} Array of PDB entries
+ */
 async function loadPDBData() {
   try {
     // Try to load from Supabase first
@@ -70,6 +105,15 @@ async function loadPDBData() {
   return samplePDBData;
 }
 
+/**
+ * Search Page Component
+ * 
+ * This is a Server Component that:
+ * - Loads PDB data on the server
+ * - Passes data to the SearchInterface client component
+ * - Handles loading states with Suspense
+ * - Implements error boundaries
+ */
 export default async function SearchPage() {
   const pdbData = await loadPDBData();
   

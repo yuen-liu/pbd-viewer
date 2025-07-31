@@ -1,5 +1,14 @@
 import Link from 'next/link';
 
+/**
+ * Home/Landing Page Component
+ * 
+ * This is the main entry point of the application. It provides:
+ * - A clean, welcoming interface
+ * - A prominent call-to-action to access the search functionality
+ * - Brief information about the application's purpose
+ * - Responsive design that works on all device sizes
+ */
 export default function Home() {
   return (
     <div className="min-h-screen bg-white flex flex-col" style={{ fontFamily: 'Calibri, Arial, sans-serif' }}>

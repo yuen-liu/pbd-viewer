@@ -1,11 +1,28 @@
-import { createClient } from '@supabase/supabase-js'
+/**
+ * Supabase Database Service
+ * 
+ * This module provides a clean interface to interact with the Supabase backend.
+ * It includes typed database operations for PDB entries and user bookmarks.
+ * 
+ * Environment Variables Required:
+ * - NEXT_PUBLIC_SUPABASE_URL: Your Supabase project URL
+ * - NEXT_PUBLIC_SUPABASE_ANON_KEY: Your Supabase anonymous/public key
+ */
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+import { createClient } from '@supabase/supabase-js';
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+// Initialize Supabase client with environment variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-// Database types
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+/**
+ * PDB Entry Type
+ * 
+ * Represents a protein structure entry in the Protein Data Bank.
+ * This type maps to the 'pdb_entries' table in Supabase.
+ */
 export interface PDBEntry {
   id?: number;
   pdb_id: string;
@@ -23,14 +40,34 @@ export interface PDBEntry {
   updated_at?: string;
 }
 
+/**
+ * User Bookmark Type
+ * 
+ * Represents a user's bookmarked PDB entry.
+ * Maps to the 'user_bookmarks' table in Supabase.
+ */
 export interface UserBookmark {
+  /** Unique identifier */
   id?: number;
+  /** Supabase auth user ID */
   user_id: string;
+  /** PDB ID of the bookmarked entry */
   pdb_id: string;
+  /** When the bookmark was created */
   created_at?: string;
 }
 
-// PDB Database functions with inverted index support
+/**
+ * PDB Service
+ * 
+ * Collection of functions for querying PDB entries with various search methods:
+ * - Basic search (full-text)
+ * - Advanced search (field-specific)
+ * - Fuzzy search (for typos)
+ * - Hybrid search (combining multiple methods)
+ * 
+ * All functions return Promises that resolve to the query results.
+ */
 export const pdbService = {
   // Get all PDB entries with optional basic search
   async getPDBEntries(searchQuery?: string, limit = 50, offset = 0) {
@@ -207,7 +244,17 @@ export const pdbService = {
   }
 };
 
-// Bookmark functions (requires authentication)
+/**
+ * Bookmark Service
+ * 
+ * Handles user-specific bookmark operations.
+ * Requires authentication for all operations.
+ * 
+ * Features:
+ * - Get user's bookmarks
+ * - Add/remove bookmarks
+ * - Check if entry is bookmarked
+ */
 export const bookmarkService = {
   // Get user bookmarks
   async getUserBookmarks(userId: string) {

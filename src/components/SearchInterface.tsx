@@ -1,29 +1,61 @@
 'use client';
 
+/**
+ * Search Interface Component
+ * 
+ * This component provides a search interface for exploring PDB entries with the following features:
+ * - Real-time fuzzy search using Fuse.js
+ * - Bookmarking functionality with local storage
+ * - 3D structure preview in a modal
+ * - Responsive card layout for search results
+ */
+
 import React, { useState, useEffect, useMemo } from 'react';
 import Fuse from 'fuse.js';
+
+// UI Components
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Viewer } from './Viewer';
 import { Search, Eye, Bookmark, BookmarkCheck, Image as ImageIcon, ExternalLink } from 'lucide-react';
 
+// Local Components
+import { Viewer } from './Viewer';
+
+/**
+ * Represents a single PDB (Protein Data Bank) entry
+ */
 interface PDBEntry {
+  /** Unique PDB identifier (e.g., '1TUP') */
   pdb_id: string;
+  /** Common name of the protein */
   protein_name: string;
+  /** Source organism of the protein */
   organism: string;
+  /** Resolution of the structure in Angstroms (if available) */
   resolution?: number;
+  /** Experimental method used (e.g., X-RAY DIFFRACTION, NMR, ELECTRON MICROSCOPY) */
   method?: string;
+  /** Date when the structure was released to the PDB */
   release_date?: string;
+  /** Full title of the structure */
   structure_title?: string;
+  /** Molecular weight in Daltons */
   molecular_weight?: number;
+  /** List of associated keywords */
   keywords?: string[];
+  /** Classification category */
   classification?: string;
+  /** List of authors who determined the structure */
   authors?: string[];
 }
 
+/**
+ * Props for the SearchInterface component
+ * @property {PDBEntry[]} pdbData - Array of PDB entries to search through
+ */
 interface SearchInterfaceProps {
   pdbData: PDBEntry[];
 }
