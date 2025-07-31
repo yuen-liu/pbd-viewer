@@ -157,9 +157,21 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({ pdbData }) => 
 
   return (
     <div className="w-full max-w-6xl mx-auto p-4 space-y-6">
+      {/* Back Button */}
+      <div className="mb-4">
+        <Button 
+          variant="default" 
+          size="sm" 
+          onClick={() => window.location.href = '/'}
+          className="text-sm bg-black hover:bg-gray-800 text-white"
+        >
+          Back
+        </Button>
+      </div>
+      
       {/* Search Header */}
       <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-gray-900">PDB Structure Viewer</h1>
+        <h1 className="text-4xl font-bold text-gray-900">PDB Explorer</h1>
         <p className="text-lg text-gray-600">
           Search and visualize protein structures from the Protein Data Bank
         </p>
