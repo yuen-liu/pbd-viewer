@@ -4,7 +4,7 @@ A modern, user-friendly interface for exploring protein structures from the Prot
 
 ![PDB Explorer Screenshot](https://via.placeholder.com/1200x600.png?text=PDB+Explorer+Screenshot)
 
-## ✨ Features
+## Features
 
 - **Clean Interface**: Minimalist design focused on usability
 - **Fast Search**: Instantly find protein structures by ID, name, or organism
@@ -12,7 +12,7 @@ A modern, user-friendly interface for exploring protein structures from the Prot
 - **Bookmarking**: Save and manage your favorite structures
 - **Responsive**: Works seamlessly on all devices
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Clone the repository**
    ```bash
@@ -31,7 +31,7 @@ A modern, user-friendly interface for exploring protein structures from the Prot
    ```
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 15 with TypeScript
 - **Styling**: Tailwind CSS + ShadCN UI
@@ -41,7 +41,7 @@ A modern, user-friendly interface for exploring protein structures from the Prot
 - **Database**: Supabase
 - **Deployment**: Vercel
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
@@ -55,7 +55,7 @@ src/
 └── lib/                 # Utility functions
 ```
 
-## 🔍 Usage
+## Usage
 
 1. **Search**
    - Enter keywords to search through the PDB database
@@ -70,11 +70,11 @@ src/
    - Bookmark structures for quick access later
    - View all bookmarked structures in one place
 
-## 🌐 Live Demo
+## Live Demo
 
 Check out the live demo: [https://pdb-explorer.vercel.app](https://pdb-explorer.vercel.app)
 
-## 🔌 APIs & Libraries Used
+## APIs & Libraries Used
 
 ### External Services
 This project integrates with the following RCSB PDB APIs:
@@ -123,7 +123,7 @@ This project integrates with the following RCSB PDB APIs:
 - **clsx & tailwind-merge**: For dynamic class name composition
 - **class-variance-authority**: For type-safe component variants
 
-✅ **Performance Optimized**: Fast search and rendering
+**Performance Optimized**: Fast search and rendering
 
 ## Future Directions I'm thinking about
 
